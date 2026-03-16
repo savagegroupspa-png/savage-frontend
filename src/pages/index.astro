@@ -1,0 +1,26 @@
+---
+// src/pages/index.astro
+import LayoutPrincipal from '../layouts/LayoutPrincipal.astro';
+import BarraNavegacion from '../components/BarraNavegacion.astro';
+import BannerPrincipal from '../components/BannerPrincipal.astro';
+import GamaInteractiva from '../components/GamaInteractiva.astro'; 
+import SeccionHistoria from '../components/SeccionHistoria.astro';
+import SeccionSavageGroup from '../components/SeccionSavageGroup.astro'; // <--- 1. Importamos al equipo
+import SeccionContactoB2B from '../components/SeccionContactoB2B.astro';
+---
+
+<LayoutPrincipal>
+	<BarraNavegacion />
+	
+	<main>
+		<BannerPrincipal />
+		
+		<GamaInteractiva />
+		
+		<SeccionHistoria />
+		
+		<SeccionSavageGroup /> 
+		
+		<SeccionContactoB2B />
+	</main>
+</LayoutPrincipal>

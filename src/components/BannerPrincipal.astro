@@ -1,0 +1,103 @@
+---
+// src/components/BannerPrincipal.astro
+---
+<section class="banner-contenedor">
+    <video class="video-fondo" autoplay loop muted playsinline>
+        <source src="https://res.cloudinary.com/dauuk5yar/video/upload/v1773679341/savage_video_xjtzxr.mp4" type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <div class="capa-oscura"></div>
+
+    <div class="contenido-banner">
+        <h1 class="titulo-principal">50% FRUTA 100% SAVAGE</h1>
+        <p class="subtitulo">LIBERA TU INSTINTO CON EL SABOR AUTÉNTICO DE FRUTA REAL.</p>
+        
+       <a href="#producto" class="boton-dorado">DESCUBRE LA GAMA</a>
+    </div>
+</section>
+
+<style>
+    .banner-contenedor {
+        position: relative;
+        height: 100vh; /* Ocupa el 100% de la pantalla visible */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow: hidden; /* Evita barras de desplazamiento si el video es muy grande */
+    }
+
+    /* Estilos del video para que cubra todo el fondo sin deformarse */
+    .video-fondo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Recorta los bordes para llenar la pantalla */
+        z-index: 1;
+    }
+
+    /* Capa semi-transparente para oscurecer el video y que resalte el texto */
+    .capa-oscura {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Ajusta el 0.6 si quieres que sea más o menos oscuro */
+        z-index: 2;
+    }
+
+    /* Contenedor de los textos */
+    .contenido-banner {
+        position: relative;
+        z-index: 3; /* Tiene que estar sobre el video y la capa oscura */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    /* Tipografía calcada de tu diseño */
+    .titulo-principal {
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(3rem, 8vw, 6rem); /* Se achica en celulares y crece en PC */
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 10px 0;
+        line-height: 1.1;
+        letter-spacing: 1px;
+    }
+
+    .subtitulo {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        font-weight: 400;
+        color: #e5e5e5;
+        margin: 0 0 40px 0;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* El botón dorado "Descubre la Gama" */
+    .boton-dorado {
+        font-family: 'Inter', sans-serif;
+        background-color: #facc15; /* Dorado premium */
+        color: #000000;
+        text-decoration: none;
+        padding: 12px 35px;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 4px;
+        text-transform: uppercase;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .boton-dorado:hover {
+        background-color: #eab308; /* Un dorado ligeramente más oscuro al pasar el mouse */
+        transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    }
+</style>

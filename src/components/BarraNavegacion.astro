@@ -1,0 +1,87 @@
+---
+// src/components/BarraNavegacion.astro
+---
+<header class="barra-superior">
+    <div class="contenedor-menu">
+        <a href="/" class="logo-marca">SAVAGE</a>
+
+        <nav class="enlaces-menu">
+            <a href="#producto">PRODUCTO</a>
+            <a href="#historia">NUESTRA HISTORIA</a>
+            <a href="#savage-group">SAVAGE GROUP</a>
+            <a href="#contacto">CONTACTO</a>
+        </nav>
+
+        <a href="#contacto" class="boton-preorden">PRE-ORDEN B2B</a>
+    </div>
+</header>
+
+<style>
+    .barra-superior {
+        width: 100%;
+        background-color: #000000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .contenedor-menu {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-marca {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+        letter-spacing: 2px;
+    }
+
+    .enlaces-menu {
+        display: flex;
+        gap: 35px;
+    }
+
+    .enlaces-menu a {
+        font-family: 'Inter', sans-serif;
+        color: #a3a3a3; 
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+    }
+
+    .enlaces-menu a:hover {
+        color: #ffffff; 
+    }
+
+    .boton-preorden {
+        font-family: 'Inter', sans-serif;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 8px 25px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border-radius: 4px; 
+        transition: all 0.3s ease;
+    }
+
+    .boton-preorden:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    @media (max-width: 900px) {
+        .enlaces-menu { display: none; } 
+    }
+</style>

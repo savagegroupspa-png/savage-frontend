@@ -1,0 +1,262 @@
+---
+// src/components/GamaInteractiva.astro
+
+const imgPremium = "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679338/savage_premiun_ngsdgy.jpg";
+const imgPineapple = "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679337/savage_pineapple_c4afux.jpg";
+const imgMango = "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679341/savage_mango_prcfuu.jpg";
+const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679338/savage_exotic_e1t58k.jpg"; 
+---
+
+<div id="producto" class="seccion-interactiva">
+    
+    <div class="origen-header">
+        <h1>EL ORIGEN DEL SABOR</h1>
+        <p>Nuestras bebidas no nacen en laboratorios, nacen en la tierra. Seleccionamos la mejor fruta desde sus raíces para extraer su esencia más pura. Haz clic en tu lata favorita y descubre la energía que desafía lo convencional.</p>
+    </div>
+
+    <div id="escenario" class="escenario-wrapper tema-passion">
+        
+        <div class="visor-principal">
+            
+            <div class="info-dinamica">
+                <h2 id="titulo-sabor">PASSION FRUIT</h2>
+                <h3 id="tagline-sabor">La Intensidad de la Noche.</h3>
+                
+                <div class="bloque-info">
+                    <h4>LA HISTORIA</h4>
+                    <p id="historia-sabor">Savage Passion Fruit nació en las noches legendarias, donde la energía no se detiene. Queríamos capturar la vibración de la música y la intensidad de los encuentros en una lata que no se pareciera a nada.</p>
+                </div>
+
+                <div class="bloque-info">
+                    <h4>LO QUE CONTIENE</h4>
+                    <p id="ingredientes-sabor"><strong>Pulpa de Maracuyá Real:</strong> Sentirás la acidez y el dulzor vibrante. <strong>Semillas Reales:</strong> No las quitamos; aportan una textura y un crujido inigualable.</p>
+                </div>
+            </div>
+
+            <div class="lata-destacada-container">
+                <div class="contenedor-imagen-grande">
+                    <img id="lata-grande" src={imgPremium} alt="Savage Can" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="selector-sabores">
+            <button class="latita-btn activo" data-sabor="passion">
+                <img src={imgPremium} alt="Passion" class="latita-img" />
+            </button>
+            <button class="latita-btn" data-sabor="pineapple">
+                <img src={imgPineapple} alt="Pineapple" class="latita-img" />
+            </button>
+            <button class="latita-btn" data-sabor="mango">
+                <img src={imgMango} alt="Mango" class="latita-img" />
+            </button>
+            <button class="latita-btn" data-sabor="exotic">
+                <img src={imgExotic} alt="Exotic" class="latita-img" />
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const baseDatosSabores = {
+        passion: {
+            titulo: "PASSION FRUIT",
+            tagline: "La Intensidad de la Noche.",
+            historia: "Savage Passion Fruit nació en las noches legendarias, donde la energía no se detiene. Queríamos capturar la vibración de la música y la intensidad de los encuentros en una lata que no se pareciera a nada.",
+            ingredientes: "<strong>Pulpa de Maracuyá Real:</strong> Sentirás la acidez y el dulzor vibrante. <strong>Semillas Reales:</strong> No las quitamos; aportan una textura y un crujido inigualable.",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679338/savage_premiun_ngsdgy.jpg",
+            claseColor: "tema-passion"
+        },
+        pineapple: {
+            titulo: "PINEAPPLE",
+            tagline: "El Escape Tropical del Sol.",
+            historia: "Diseñada para los días largos y los veranos sin fin bajo el sol de la costa. Pineapple es tu boleto de ida a un paraíso salvaje. Es el frescor que necesitas para recargar energías y liberar tu instinto.",
+            ingredientes: "<strong>Zumo de Piña Fresca:</strong> Una explosión de sabor dulce y cítrico. <strong>Trozos de Fruta Real:</strong> Sí, hay trozos. Cada sorbo es un recordatorio de que Savage es fruta de verdad.",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679337/savage_pineapple_c4afux.jpg",
+            claseColor: "tema-pineapple"
+        },
+        mango: {
+            titulo: "CREAMY MANGO",
+            tagline: "La Energía Terciopelo.",
+            historia: "Queríamos crear una energía que te acariciara antes de rugir. Creamy Mango es la fusión perfecta entre la suavidad del terciopelo y la fuerza de la fruta madura. Un poder sostenido e imparable.",
+            ingredientes: "<strong>Puré de Mango Maduro:</strong> Capturamos la textura densa, cremosa y el dulzor auténtico. <strong>Fórmula Pura:</strong> Sin vueltas, solo el poder natural de la fruta impulsando tu instinto.",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679341/savage_mango_prcfuu.jpg",
+            claseColor: "tema-mango"
+        },
+        exotic: {
+            titulo: "EXOTIC SOURSOP",
+            tagline: "La Bestia de lo Desconocido.",
+            historia: "El secreto mejor guardado de Savage. Para los exploradores de sabores, los que no temen a lo desconocido. Captura el misterio de la guanábana selvática para una experiencia agridulce y compleja.",
+            ingredientes: "<strong>Guanábana Exótica Real:</strong> El sabor único de la guanábana con su textura cremosa. <strong>Sabor Complejo:</strong> Una mezcla intrigante de notas ácidas y dulces que desafía tus sentidos.",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679338/savage_exotic_e1t58k.jpg",
+            claseColor: "tema-exotic"
+        }
+    };
+
+    const botones = document.querySelectorAll('.latita-btn');
+    const escenario = document.getElementById('escenario') as HTMLElement;
+    const elTitulo = document.getElementById('titulo-sabor') as HTMLElement;
+    const elTagline = document.getElementById('tagline-sabor') as HTMLElement;
+    const laHistoria = document.getElementById('historia-sabor') as HTMLElement;
+    const losIngredientes = document.getElementById('ingredientes-sabor') as HTMLElement;
+    const laLataGrande = document.getElementById('lata-grande') as HTMLImageElement; 
+    const infoContainer = document.querySelector('.info-dinamica') as HTMLElement;
+
+    botones.forEach(boton => {
+        boton.addEventListener('click', () => {
+            botones.forEach(b => b.classList.remove('activo'));
+            boton.classList.add('activo');
+
+            const saborSeleccionado = boton.getAttribute('data-sabor') as keyof typeof baseDatosSabores;
+            const data = baseDatosSabores[saborSeleccionado];
+
+            if (!data) return; 
+
+            infoContainer.style.opacity = '0';
+            laLataGrande.style.transform = 'scale(0.9) translateY(20px)';
+            laLataGrande.style.opacity = '0';
+
+            setTimeout(() => {
+                elTitulo.innerHTML = data.titulo;
+                elTagline.innerHTML = data.tagline;
+                laHistoria.innerHTML = data.historia;
+                losIngredientes.innerHTML = data.ingredientes;
+                laLataGrande.src = data.imagen;
+                
+                escenario.className = `escenario-wrapper ${data.claseColor}`;
+
+                infoContainer.style.opacity = '1';
+                laLataGrande.style.transform = 'scale(1) translateY(0)';
+                laLataGrande.style.opacity = '1';
+            }, 300); 
+        });
+    });
+</script>
+
+<style>
+    :root {
+        --c-passion: #4a0054;
+        --c-pineapple: #46631f;
+        --c-mango: #6a470e;
+        --c-exotic: #1a1a1a;
+    }
+
+    .seccion-interactiva {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px 100px;
+        background-color: #050505;
+    }
+
+    /* ORIGEN */
+    .origen-header { max-width: 800px; text-align: center; margin-bottom: 60px; }
+    .origen-header h1 { font-family: 'Oswald', sans-serif; font-size: 3rem; color: #facc15; margin-bottom: 20px; letter-spacing: 2px; }
+    .origen-header p { font-family: 'Inter', sans-serif; font-size: 1.1rem; color: #cccccc; line-height: 1.6; }
+
+    /* EL ESCENARIO CENTRAL */
+    .escenario-wrapper {
+        width: 100%;
+        max-width: 1100px;
+        border-radius: 40px;
+        padding: 60px 40px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        transition: background-color 0.6s ease;
+    }
+
+    .tema-passion { background-color: var(--c-passion); }
+    .tema-pineapple { background-color: var(--c-pineapple); }
+    .tema-mango { background-color: var(--c-mango); }
+    .tema-exotic { background-color: var(--c-exotic); }
+
+    .visor-principal {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    /* Textos Izquierda */
+    .info-dinamica {
+        flex: 1;
+        color: white;
+        transition: opacity 0.3s ease;
+    }
+
+    .info-dinamica h2 { font-family: 'Oswald', sans-serif; font-size: 4rem; margin: 0; line-height: 1; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+    .info-dinamica h3 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: #facc15; margin: 10px 0 30px; letter-spacing: 1px; }
+    
+    .bloque-info { margin-bottom: 25px; }
+    .bloque-info h4 { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 8px; opacity: 0.6; }
+    .bloque-info p { font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.6; opacity: 0.9; }
+
+    /* Imagen Derecha (IMAGEN RECTANGULAR NORMAL) */
+    .lata-destacada-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor-imagen-grande {
+        width: 100%;
+        max-width: 260px;
+        border-radius: 16px; 
+        overflow: hidden;
+        filter: drop-shadow(0 25px 35px rgba(0,0,0,0.5));
+    }
+
+    .contenedor-imagen-grande img {
+        width: 100%;
+        display: block;
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    }
+
+    /* PARTE INFERIOR: SELECTOR DE LATITAS */
+    .selector-sabores {
+        display: flex;
+        gap: 30px;
+        background: rgba(0,0,0,0.3);
+        padding: 20px 40px;
+        border-radius: 50px;
+        backdrop-filter: blur(10px);
+    }
+
+    .latita-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: grayscale(80%) opacity(0.6); 
+        outline: none;
+    }
+
+    .latita-btn:hover, .latita-btn.activo {
+        transform: scale(1.15) translateY(-10px);
+        filter: grayscale(0%) opacity(1);
+    }
+
+    .latita-img {
+        width: 55px;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+        .visor-principal { flex-direction: column-reverse; text-align: center; }
+        .info-dinamica h2 { font-size: 3rem; }
+        .selector-sabores { gap: 15px; padding: 15px 25px; }
+        .latita-img { width: 45px; }
+    }
+</style>

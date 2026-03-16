@@ -1,0 +1,196 @@
+---
+// src/components/SeccionSavageGroup.astro
+const fotoIconoCloudinary = "https://res.cloudinary.com/dauuk5yar/image/upload/v1773679337/icono_blbjcu.png";
+---
+
+<section id="savage-group" class="seccion-equipo">
+    <div class="contenedor-equipo">
+        
+        <div class="cabecera-equipo">
+            <h2 class="titulo-manada">SAVAGE GROUP</h2>
+            <p class="subtitulo-equipo">LA MANADA DETRÁS DEL INSTINTO</p>
+            <div class="linea-dorada"></div>
+        </div>
+
+        <div class="grid-equipo">
+            
+            <div class="tarjeta-miembro">
+                <div class="contenedor-foto">
+                    <img src={fotoIconoCloudinary} alt="Sebastián Dura" class="foto-miembro" />
+                </div>
+                <h3 class="nombre-miembro">SEBASTIÁN DURAN</h3>
+                <span class="cargo-miembro">Estudiante de Ing. en Negocios Internacionales</span>
+                <p class="desc-miembro">El estratega global de la manada. Su visión comercial impulsa a Savage a cruzar fronteras, asegurando que nuestra energía salvaje llegue a nuevos mercados con fuerza y posicionamiento premium.</p>
+            </div>
+
+            <div class="tarjeta-miembro">
+                <div class="contenedor-foto">
+                    <img src={fotoIconoCloudinary} alt="Pablo Medina" class="foto-miembro" />
+                </div>
+                <h3 class="nombre-miembro">PABLO MEDINA</h3>
+                <span class="cargo-miembro">Estudiante de Ing. Civil en Informática</span>
+                <p class="desc-miembro">El arquitecto digital. Transforma ideas complejas en experiencias visuales impactantes y código perfecto, dándole vida a la identidad tecnológica e interactiva de la marca.</p>
+            </div>
+
+            <div class="tarjeta-miembro">
+                <div class="contenedor-foto">
+                    <img src={fotoIconoCloudinary} alt="Martín Araya" class="foto-miembro" />
+                </div>
+                <h3 class="nombre-miembro">MARTÍN ARAYA</h3>
+                <span class="cargo-miembro">Estudiante de Ing. Civil en Informática</span>
+                <p class="desc-miembro">El motor de innovación. Su mente analítica asegura que la infraestructura de Savage funcione con la misma potencia, velocidad y precisión que el interior de nuestras latas.</p>
+            </div>
+
+            <div class="tarjeta-miembro">
+                <div class="contenedor-foto">
+                    <img src={fotoIconoCloudinary} alt="Leonardo Cerda" class="foto-miembro" />
+                </div>
+                <h3 class="nombre-miembro">LEONARDO CERDA</h3>
+                <span class="cargo-miembro">Operaciones y Logística</span>
+                <p class="desc-miembro">La fuerza operativa. Con un espíritu forjado en la exigencia del terreno, aporta el carácter indomable al grupo, garantizando que cada paso de Savage sea firme, audaz y sin contratiempos.</p>
+            </div>
+
+            <div class="tarjeta-miembro">
+                <div class="contenedor-foto">
+                    <img src={fotoIconoCloudinary} alt="Chaysan Lee" class="foto-miembro" />
+                </div>
+                <h3 class="nombre-miembro">CHAYSAN LEE</h3>
+                <span class="cargo-miembro">Estudiante de Ing. en Negocios Internacionales</span>
+                <p class="desc-miembro">El puente entre Savage y el mundo. Experto en alianzas estratégicas, asegura que la calidad y la identidad de la marca se mantengan intactas y letales en cada trato comercial.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .seccion-equipo {
+        background-color: #080808; /* Un negro muy profundo para contrastar */
+        padding: 100px 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .contenedor-equipo {
+        max-width: 1200px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cabecera-equipo {
+        margin-bottom: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo-manada {
+        font-family: 'Oswald', sans-serif;
+        font-size: 3.5rem;
+        color: #ffffff;
+        margin: 0 0 10px 0;
+        letter-spacing: 2px;
+    }
+
+    .subtitulo-equipo {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.1rem;
+        color: #facc15;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+    }
+
+    .linea-dorada {
+        width: 80px;
+        height: 3px;
+        background-color: #facc15;
+    }
+
+    /* GRID PARA LOS 5 MIEMBROS */
+    .grid-equipo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .tarjeta-miembro {
+        background-color: #111111;
+        border: 1px solid #222;
+        border-radius: 16px;
+        padding: 40px 30px;
+        width: calc(33.333% - 27px); /* 3 columnas arriba */
+        min-width: 280px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .tarjeta-miembro:hover {
+        transform: translateY(-10px);
+        border-color: #facc15;
+    }
+
+    .contenedor-foto {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: #222;
+        margin-bottom: 25px;
+        overflow: hidden;
+        border: 3px solid #333;
+        transition: border-color 0.3s ease;
+    }
+
+    .tarjeta-miembro:hover .contenedor-foto {
+        border-color: #facc15;
+    }
+
+    .foto-miembro {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .nombre-miembro {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.6rem;
+        color: #ffffff;
+        margin: 0 0 5px 0;
+        letter-spacing: 1px;
+    }
+
+    .cargo-miembro {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        color: #facc15;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .desc-miembro {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: #a3a3a3;
+        line-height: 1.6;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+        .tarjeta-miembro { width: calc(50% - 20px); } /* 2 columnas en tablets */
+    }
+    @media (max-width: 650px) {
+        .tarjeta-miembro { width: 100%; } /* 1 columna en celulares */
+    }
+</style>

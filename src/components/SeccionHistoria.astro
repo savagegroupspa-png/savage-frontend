@@ -1,0 +1,112 @@
+---
+// src/components/SeccionHistoria.astro
+---
+
+<section id="historia" class="seccion-historia">
+    <div class="contenedor-historia">
+        
+        <div class="bloque-texto">
+            <h2 class="titulo-historia">EL ORIGEN SALVAJE</h2>
+            <h3 class="subtitulo-historia">DE LA COSTA INDOMABLE A TU LATA.</h3>
+            
+            <p class="parrafo-grande">
+                Todo comenzó frente a las olas indomables de Punta de Lobos. Buscábamos una energía diferente, una vibración que no naciera en un laboratorio estéril, sino en la fuerza pura y caótica de la naturaleza. Estábamos cansados de los sabores artificiales y las promesas vacías. Queríamos la intensidad de la fruta real golpeando tus sentidos.
+            </p>
+            
+            <p class="parrafo-grande">
+                Así nació <strong>SAVAGE</strong>. No es solo un premium mixer, es un manifiesto. Seleccionamos cuidadosamente las frutas más exóticas y extraemos su pulpa para embotellar el rugido del océano y la rebeldía de la tierra. Diseñado para aquellos que no se conforman con lo ordinario, para los que viven de noche, los que crean, los que rompen las reglas. 
+            </p>
+
+            <div class="firma-fundadores">
+                <span>FUNDADO EN CHILE</span>
+                <div class="linea-dorada"></div>
+                <span>100% ACTITUD</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .seccion-historia {
+        width: 100%;
+        background-color: #0a0a0a; /* Un tono sutilmente diferente al negro puro del fondo general */
+        padding: 120px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* Le agregamos un borde superior sutil para separarlo visualmente de la sección de latas */
+        border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    }
+
+    .contenedor-historia {
+        max-width: 900px;
+        text-align: center;
+    }
+
+    .titulo-historia {
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        color: #ffffff;
+        margin: 0 0 10px 0;
+        letter-spacing: 2px;
+        line-height: 1;
+    }
+
+    .subtitulo-historia {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.2rem;
+        color: #facc15; /* Dorado Savage */
+        margin: 0 0 50px 0;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .parrafo-grande {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.4rem;
+        line-height: 1.8;
+        color: #cccccc;
+        margin-bottom: 30px;
+        font-weight: 400;
+    }
+
+    .parrafo-grande strong {
+        color: #ffffff;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 1px;
+    }
+
+    .firma-fundadores {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-family: 'Oswald', sans-serif;
+        color: #888888;
+        letter-spacing: 2px;
+        font-size: 1rem;
+    }
+
+    .linea-dorada {
+        width: 60px;
+        height: 2px;
+        background-color: #facc15;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+        .parrafo-grande {
+            font-size: 1.1rem;
+            text-align: left; /* En móviles a veces es más fácil leer textos largos alineados a la izquierda */
+        }
+        
+        .firma-fundadores {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+</style>
