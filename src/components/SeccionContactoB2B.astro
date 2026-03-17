@@ -125,7 +125,9 @@
 </style>
 
 <script>
-    const API_URL = "http://localhost:3000/api";
+    // Lógica inteligente: Si existe la variable en Render, la usa. 
+    // Si estás en tu PC (localhost), usa la ruta local.
+    const API_URL = import.meta.env.PUBLIC_API_URL || "http://localhost:3000/api";
 
     async function iniciarFormularios() {
         const manejarEnvio = async (idForm: string, idMsg: string, endpoint: string, mensajeExito: string) => {
@@ -138,12 +140,13 @@
                 e.preventDefault();
                 
                 statusMsg.textContent = "ENVIANDO A LA MANADA...";
-                statusMsg.style.color = "#facc15"; // Enviando también en amarillo
+                statusMsg.style.color = "#facc15";
 
                 const formData = new FormData(form);
                 const data = Object.fromEntries(formData);
 
                 try {
+                    // Usamos la API_URL dinámica
                     const response = await fetch(`${API_URL}/${endpoint}`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -152,24 +155,30 @@
 
                     if (response.ok) {
                         statusMsg.textContent = mensajeExito;
-                        statusMsg.style.color = "#facc15"; // ÉXITO EN AMARILLO 🔥
+                        statusMsg.style.color = "#facc15"; 
                         form.reset();
                         setTimeout(() => { statusMsg.textContent = ""; }, 6000);
                     } else {
-                        statusMsg.textContent = "❌ ERROR EN EL SERVIDOR.";
-                        statusMsg.style.color = "#f87171"; // El error lo dejamos en rojo para que resalte
+                        const errorData = await response.json();
+                        statusMsg.textContent = `❌ ERROR: ${errorData.error || 'SERVIDOR'}`;
+                        statusMsg.style.color = "#f87171";
                     }
                 } catch (error) {
+                    console.error("Error en el envío:", error);
                     statusMsg.textContent = "❌ SIN CONEXIÓN CON EL BACKEND.";
                     statusMsg.style.color = "#f87171";
                 }
             });
         };
 
+        // Activamos los dos formularios
         manejarEnvio('form-b2b', 'msg-b2b', 'distribuidores', "✅ DOSSIER SOLICITADO. REVISA TU MAIL.");
         manejarEnvio('form-b2c', 'msg-b2c', 'fans', "🔥 ¡YA ERES PARTE DE LA MANADA!");
     }
 
+    // Ejecutar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', iniciarFormularios);
+    // Para compatibilidad con transiciones de Astro
     iniciarFormularios();
 </script>
 
