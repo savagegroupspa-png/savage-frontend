@@ -1,31 +1,23 @@
 ---
 // src/components/SeccionHistoria.astro
 ---
-
 <section id="historia" class="seccion-historia">
     <div class="contenedor-historia">
         
+        <!-- COLUMNA IZQUIERDA: Texto -->
         <div class="bloque-texto">
-            <h2 class="titulo-historia">EL ORIGEN SALVAJE</h2>
-            <h3 class="subtitulo-historia">DE LA COSTA INDOMABLE A TU LATA.</h3>
+            <h2 class="titulo-historia">UN SECRETO ENCONTRADO<br>EN EL CAOS.</h2>
             
             <p class="parrafo-grande">
-                Todo comenzó frente a las olas indomables de Punta de Lobos. Buscábamos una energía diferente, una vibración que no naciera en un laboratorio estéril, sino en la fuerza pura y caótica de la naturaleza. Estábamos cansados de los sabores artificiales y las promesas vacías. Queríamos la intensidad de la fruta real golpeando tus sentidos.
-            </p>
-            
-            <p class="parrafo-grande">
-                Así nació <strong>SAVAGE</strong>. En medio de una travesía implacable por el océano, un navegante alcanzó una isla desconocida. Sin provisiones y al borde del agotamiento, la naturaleza le entregó un secreto: frutas de una intensidad jamás vista.
-
-                Al probarlas, no solo recuperó la vida; encontró una misión. Tenía que llevar ese elixir al fin del mundo. Esa energía, esa pureza sagrada, no podía quedarse en la isla.
-
-                Cruzó los mares de regreso a Chile para transformar ese regalo de los dioses en un jugo de máxima concentración. Así nació Savage. No es una bebida, es el rescate de lo auténtico. Lo que le salvó la vida al navegante, hoy viene a despertar la tuya. 
+                En medio de una travesía implacable por el océano, un navegante alcanzó una isla desconocida. Sin provisiones y al borde del agotamiento, la naturaleza le entregó un secreto: frutas de una intensidad jamás vista. No fue solo alimento; fue una misión. Traer a Chile ese elixir de máxima concentración, creado por los dioses de la isla.
             </p>
 
-            <div class="firma-fundadores">
-                <span>FUNDADO EN CHILE</span>
-                <div class="linea-dorada"></div>
-                <span>100% ACTITUD</span>
-            </div>
+            <a href="#producto" class="boton-cta">DESCUBRIR SAVAGE</a>
+        </div>
+
+        <!-- COLUMNA DERECHA: Logo con fondo épico -->
+        <div class="bloque-visual">
+            <div class="overlay-visual"></div>  
         </div>
 
     </div>
@@ -34,83 +26,159 @@
 <style>
     .seccion-historia {
         width: 100%;
-        background-color: #0a0a0a; /* Un tono sutilmente diferente al negro puro del fondo general */
-        padding: 120px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        /* Le agregamos un borde superior sutil para separarlo visualmente de la sección de latas */
-        border-top: 1px solid rgba(255, 255, 255, 0.05); 
+        background-color: #080808;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        overflow: hidden;
     }
 
     .contenedor-historia {
-        max-width: 900px;
-        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 600px;
+    }
+
+    /* ── COLUMNA IZQUIERDA ── */
+    .bloque-texto {
+        padding: 80px 60px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #080808;
+        position: relative;
+    }
+
+    .bloque-texto::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
     }
 
     .titulo-historia {
         font-family: 'Oswald', sans-serif;
-        font-size: clamp(3rem, 6vw, 5rem);
+        font-size: clamp(2rem, 3.5vw, 3.2rem);
         color: #ffffff;
-        margin: 0 0 10px 0;
-        letter-spacing: 2px;
-        line-height: 1;
-    }
-
-    .subtitulo-historia {
-        font-family: 'Inter', sans-serif;
-        font-size: 1.2rem;
-        color: #facc15; /* Dorado Savage */
-        margin: 0 0 50px 0;
-        letter-spacing: 4px;
-        text-transform: uppercase;
+        margin: 0 0 30px 0;
+        letter-spacing: 1px;
+        line-height: 1.1;
         font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
     }
 
     .parrafo-grande {
         font-family: 'Inter', sans-serif;
-        font-size: 1.4rem;
-        line-height: 1.8;
-        color: #cccccc;
-        margin-bottom: 30px;
+        font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+        line-height: 1.85;
+        color: #aaaaaa;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-right: auto;
         font-weight: 400;
+        max-width: 600px;
+        text-align: justify;
     }
 
-    .parrafo-grande strong {
-        color: #ffffff;
+    .boton-cta {
+        display: inline-block;
         font-family: 'Oswald', sans-serif;
-        letter-spacing: 1px;
+        font-size: 0.95rem;
+        letter-spacing: 3px;
+        color: #000;
+        background-color: #facc15;
+        padding: 14px 32px;
+        text-decoration: none;
+        font-weight: 600;
+        align-self: center;
+        transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .firma-fundadores {
-        margin-top: 60px;
+    .boton-cta:hover {
+        background-color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    /* ── COLUMNA DERECHA ── */
+    .bloque-visual {
+        position: relative;
+        background-image: url('https://res.cloudinary.com/dauuk5yar/image/upload/v1776489828/888_toklwx.jpg'); /* Usa tu imagen de fondo épica */
+        background-size: cover;
+        background-position: center;
+        min-height: 500px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-        font-family: 'Oswald', sans-serif;
-        color: #888888;
-        letter-spacing: 2px;
-        font-size: 1rem;
+        overflow: hidden;
     }
 
-    .linea-dorada {
-        width: 60px;
-        height: 2px;
-        background-color: #facc15;
+    /* Overlay oscuro para que el logo resalte */
+    .overlay-visual {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(0,0,0,0) 0%,
+            rgba(0,0,0,0) 50%,
+            rgba(0,0,0,0) 80%
+        );
+        z-index: 1;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-        .parrafo-grande {
-            font-size: 1.1rem;
-            text-align: left; /* En móviles a veces es más fácil leer textos largos alineados a la izquierda */
+    .logo-contenedor {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 60px;
+    }
+
+    .logo-savage {
+        max-width: 320px;
+        width: 70%;
+        filter: drop-shadow(0 0 40px rgba(250, 204, 21, 0.3)) drop-shadow(0 0 80px rgba(0,0,0,0.8));
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+        .contenedor-historia {
+            grid-template-columns: 1fr;
         }
-        
-        .firma-fundadores {
-            flex-direction: column;
-            gap: 10px;
+
+        .bloque-texto {
+            padding: 60px 30px;
+        }
+
+        .bloque-texto::after {
+            display: none;
+        }
+
+        .titulo-historia {
+            font-size: clamp(1.8rem, 7vw, 2.8rem);
+        }
+
+        .parrafo-grande {
+            font-size: 1rem;
+        }
+
+        .bloque-visual {
+            min-height: 380px;
+        }
+
+        .logo-savage {
+            max-width: 220px;
         }
     }
 </style>
