@@ -18,7 +18,7 @@
                 <p class="tagline-corp">INNOVACIÓN EN CONSUMO MASIVO</p>
                 <p class="proximamente">Próximamente Energy Range.</p>
                 <div class="linea-dorada-corta"></div>
-                <p class="manager-text">Regional Manager: <span class="resalte-dorado">[TU NOMBRE]</span></p>
+                <p class="manager-text">Regional Manager: <span class="resalte-dorado">SEBASTIÁN DURÁN</span></p>
             </div>
 
             <div class="contenedor-icono">
@@ -70,7 +70,7 @@
             </svg>
         </a>
         </div>
-    <p class="email-contacto">savagegroupspa@gmail.com</p>
+    <p class="email-contacto">sebastian@drinkssavage.com</p>
     <div class="linea-separadora"></div>
     <p class="copyright">© 2026 Savage Group SpA. Todos los derechos reservados.</p>
 </footer>
@@ -127,7 +127,10 @@
 <script>
     // Lógica inteligente: Si existe la variable en Render, la usa. 
     // Si estás en tu PC (localhost), usa la ruta local.
-    const API_URL = "https://savage-backend-production.up.railway.app/api";
+    const isLocal = window.location.hostname === "localhost";
+    const API_URL = isLocal 
+        ? "http://localhost:3000/api" 
+        : "https://savage-backend-production.up.railway.app/api";
 
     async function iniciarFormularios() {
         const manejarEnvio = async (idForm: string, idMsg: string, endpoint: string, mensajeExito: string) => {
