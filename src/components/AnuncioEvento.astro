@@ -1,0 +1,501 @@
+---
+// src/components/AnuncioEvento.astro
+---
+
+<section class="evento-wrapper">
+
+    <div class="evento-contenido">
+
+        <!-- COLUMNA IZQUIERDA: INFO -->
+        <div class="evento-info">
+            <span class="evento-badge">⚡ EVENTO OFICIAL · SAVAGE LAUNCH</span>
+
+            <div class="evento-fecha-grande">
+                <span class="dia-numero">16</span>
+                <div class="dia-detalle">
+                    <span class="dia-mes">MAYO</span>
+                    <span class="dia-anio">2026</span>
+                </div>
+            </div>
+
+            <h2 class="evento-titulo">SAVAGE<br><span class="titulo-x">×</span><br>ROLABAR</h2>
+
+            <div class="evento-detalles">
+                <div class="detalle-item">
+                    <span class="detalle-icono">🕙</span>
+                    <span class="detalle-texto">DESDE LAS 22:00 HRS</span>
+                </div>
+                <div class="detalle-item">
+                    <span class="detalle-icono">📍</span>
+                    <span class="detalle-texto">PÍO X 375 — FRENTE A BOMBA LETELIER</span>
+                </div>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Pío+X+375+Viña+del+Mar+Chile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="maps-btn"
+                >
+                    <svg class="maps-icono" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                    </svg>
+                    VER EN GOOGLE MAPS
+                </a>
+            </div>
+
+            <p class="evento-desc">
+                La primera presentación oficial de Savage en escena. Una noche donde el sabor se convierte en experiencia. No te quedes fuera.
+            </p>
+
+            <a
+                href="https://www.instagram.com/savagesdrinks/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="evento-cta"
+            >
+                SEGUIR EN INSTAGRAM →
+            </a>
+        </div>
+
+        <!-- COLUMNA DERECHA: COUNTDOWN + COLLAB -->
+        <div class="evento-derecha">
+
+            <div class="collab-badge">
+                <span class="collab-text">COLABORACIÓN CON</span>
+                <span class="collab-nombre">ROLABAR</span>
+            </div>
+
+            <div class="countdown-wrapper">
+                <p class="countdown-label">FALTAN</p>
+                <div class="countdown-grid">
+                    <div class="countdown-bloque">
+                        <span class="countdown-numero" id="cd-dias">--</span>
+                        <span class="countdown-unidad">DÍAS</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-bloque">
+                        <span class="countdown-numero" id="cd-horas">--</span>
+                        <span class="countdown-unidad">HRS</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-bloque">
+                        <span class="countdown-numero" id="cd-minutos">--</span>
+                        <span class="countdown-unidad">MIN</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-bloque">
+                        <span class="countdown-numero" id="cd-segundos">--</span>
+                        <span class="countdown-unidad">SEG</span>
+                    </div>
+                </div>
+                <p class="countdown-sublabel">PARA EL EVENTO</p>
+            </div>
+
+            <div class="evento-linea-decorativa"></div>
+
+            <p class="evento-tagline">"ENERGY FROM THE EDGE"</p>
+
+        </div>
+
+    </div>
+
+    <!-- LÍNEA INFERIOR DECORATIVA -->
+    <div class="evento-ticker">
+        <div class="ticker-inner">
+            <span>SAVAGE × ROLABAR</span>
+            <span class="ticker-sep">·</span>
+            <span>16 DE MAYO 2026</span>
+            <span class="ticker-sep">·</span>
+            <span>22:00 HRS</span>
+            <span class="ticker-sep">·</span>
+            <span>PÍO X 375</span>
+            <span class="ticker-sep">·</span>
+            <span>SAVAGE × ROLABAR</span>
+            <span class="ticker-sep">·</span>
+            <span>16 DE MAYO 2026</span>
+            <span class="ticker-sep">·</span>
+            <span>22:00 HRS</span>
+            <span class="ticker-sep">·</span>
+            <span>PÍO X 375</span>
+            <span class="ticker-sep">·</span>
+            <span>SAVAGE × ROLABAR</span>
+            <span class="ticker-sep">·</span>
+            <span>16 DE MAYO 2026</span>
+            <span class="ticker-sep">·</span>
+            <span>22:00 HRS</span>
+            <span class="ticker-sep">·</span>
+            <span>PÍO X 375</span>
+            <span class="ticker-sep">·</span>
+        </div>
+    </div>
+
+</section>
+
+<script>
+    const eventoFecha = new Date('2026-05-16T22:00:00');
+
+    function actualizarCountdown() {
+        const ahora = new Date();
+        const diff = eventoFecha.getTime() - ahora.getTime();
+
+        if (diff <= 0) {
+            document.getElementById('cd-dias')!.textContent = '00';
+            document.getElementById('cd-horas')!.textContent = '00';
+            document.getElementById('cd-minutos')!.textContent = '00';
+            document.getElementById('cd-segundos')!.textContent = '00';
+            return;
+        }
+
+        const dias    = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const horas   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const segs    = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const pad = (n: number) => String(n).padStart(2, '0');
+
+        document.getElementById('cd-dias')!.textContent = pad(dias);
+        document.getElementById('cd-horas')!.textContent = pad(horas);
+        document.getElementById('cd-minutos')!.textContent = pad(minutos);
+        document.getElementById('cd-segundos')!.textContent = pad(segs);
+    }
+
+    actualizarCountdown();
+    setInterval(actualizarCountdown, 1000);
+</script>
+
+<style>
+    .evento-wrapper {
+        width: 100%;
+        position: relative;
+        border-top: 1px solid #1a1a1a;
+        border-bottom: 3px solid #facc15;
+        overflow: hidden;
+        background-image: url('https://res.cloudinary.com/dauuk5yar/image/upload/v1778389084/RolaXsavage_puqaie.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    .evento-wrapper::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.93) 0%,
+            rgba(0, 0, 0, 0.80) 50%,
+            rgba(0, 0, 0, 0.93) 100%
+        );
+        z-index: 0;
+    }
+    .evento-contenido,
+    .evento-ticker {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ── CONTENIDO PRINCIPAL ── */
+    .evento-contenido {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 90px 40px 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    /* ── COLUMNA IZQUIERDA ── */
+    .evento-badge {
+        display: inline-block;
+        background-color: #facc15;
+        color: #000000;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 2px;
+        margin-bottom: 32px;
+        animation: pulso 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulso {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4); }
+        50%       { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
+    }
+
+    .evento-fecha-grande {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+    .dia-numero {
+        font-family: 'Oswald', sans-serif;
+        font-size: 7rem;
+        font-weight: 700;
+        color: #facc15;
+        line-height: 1;
+    }
+    .dia-detalle {
+        display: flex;
+        flex-direction: column;
+    }
+    .dia-mes {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 2px;
+        line-height: 1;
+    }
+    .dia-anio {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        color: #444444;
+        letter-spacing: 3px;
+        margin-top: 4px;
+    }
+
+    .evento-titulo {
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 3px;
+        line-height: 1.0;
+        margin: 0 0 36px 0;
+    }
+    .titulo-x {
+        color: #facc15;
+        font-size: 1.5em;
+        line-height: 0.8;
+    }
+
+    .evento-detalles {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+    .detalle-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .detalle-icono { font-size: 1rem; }
+    .detalle-texto {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        color: #aaaaaa;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .maps-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 6px;
+        padding: 10px 18px;
+        background-color: transparent;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        color: #888888;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+    }
+    .maps-btn:hover {
+        border-color: #facc15;
+        color: #facc15;
+        background-color: rgba(250, 204, 21, 0.05);
+    }
+    .maps-icono {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+
+    .evento-desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: #555555;
+        line-height: 1.7;
+        margin: 0 0 36px 0;
+        max-width: 420px;
+    }
+
+    .evento-cta {
+        display: inline-block;
+        border: 1px solid #facc15;
+        color: #facc15;
+        font-family: 'Oswald', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 14px 32px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .evento-cta:hover {
+        background-color: #facc15;
+        color: #000000;
+    }
+
+    /* ── COLUMNA DERECHA ── */
+    .evento-derecha {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .collab-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+    .collab-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        color: #444444;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+    .collab-nombre {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 4px;
+        border-bottom: 2px solid #facc15;
+        padding-bottom: 8px;
+    }
+
+    /* COUNTDOWN */
+    .countdown-wrapper {
+        width: 100%;
+        background-color: #080808;
+        border: 1px solid #222222;
+        border-radius: 12px;
+        padding: 36px 24px;
+    }
+    .countdown-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        color: #444444;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin: 0 0 20px 0;
+    }
+    .countdown-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .countdown-bloque {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        min-width: 56px;
+    }
+    .countdown-numero {
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        color: #facc15;
+        line-height: 1;
+    }
+    .countdown-unidad {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.55rem;
+        color: #444444;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    .countdown-sep {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.8rem;
+        color: #333333;
+        margin-bottom: 18px;
+    }
+    .countdown-sublabel {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.6rem;
+        color: #333333;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin: 20px 0 0 0;
+    }
+
+    .evento-linea-decorativa {
+        width: 40px;
+        height: 2px;
+        background-color: #facc15;
+    }
+
+    .evento-tagline {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1rem;
+        color: #333333;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-style: italic;
+        margin: 0;
+    }
+
+    /* ── TICKER ── */
+    .evento-ticker {
+        width: 100%;
+        background-color: #facc15;
+        padding: 12px 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .ticker-inner {
+        display: inline-block;
+        animation: ticker 25s linear infinite;
+    }
+    .ticker-inner span {
+        font-family: 'Oswald', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #000000;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        padding: 0 8px;
+    }
+    .ticker-sep { color: #00000066 !important; }
+
+    @keyframes ticker {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+        .evento-contenido {
+            grid-template-columns: 1fr;
+            gap: 60px;
+            padding: 60px 24px 50px;
+        }
+        .evento-derecha { order: -1; }
+        .dia-numero { font-size: 5rem; }
+    }
+    @media (max-width: 480px) {
+        .countdown-bloque { min-width: 44px; }
+        .countdown-numero { font-size: 1.8rem; }
+    }
+</style>

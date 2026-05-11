@@ -3,9 +3,11 @@
 import LayoutPrincipal from '../layouts/LayoutPrincipal.astro';
 import BarraNavegacion from '../components/BarraNavegacion.astro';
 import BannerPrincipal from '../components/BannerPrincipal.astro';
-import GamaInteractiva from '../components/GamaInteractiva.astro'; 
+import AnuncioEvento from '../components/AnuncioEvento.astro';
+import GamaInteractiva from '../components/GamaInteractiva.astro';
+import SeccionStats from '../components/SeccionStats.astro';
 import SeccionHistoria from '../components/SeccionHistoria.astro';
-import SeccionSavageGroup from '../components/SeccionSavageGroup.astro'; // <--- 1. Importamos al equipo
+import SeccionSavageGroup from '../components/SeccionSavageGroup.astro';
 import SeccionContactoB2B from '../components/SeccionContactoB2B.astro';
 ---
 
@@ -14,9 +16,13 @@ import SeccionContactoB2B from '../components/SeccionContactoB2B.astro';
 	
 	<main>
 		<BannerPrincipal />
-		
+
+		<AnuncioEvento />
+
 		<GamaInteractiva />
-		
+
+		<SeccionStats />
+
 		<SeccionHistoria />
 		
 		<SeccionSavageGroup /> 

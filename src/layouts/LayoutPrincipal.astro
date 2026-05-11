@@ -9,12 +9,35 @@ import BotonWhatsapp from '../components/BotonWhatsapp.astro';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>Savage Juice | Premium Mixers</title>
+		<meta name="description" content="Savage — 50% fruta real, 100% instinto. Bebidas premium con pulpa real. Disponible próximamente en Chile." />
+		<meta property="og:title" content="Savage Juice | Premium Mixers" />
+		<meta property="og:description" content="50% fruta real, 100% savage. El mixer premium que desafía lo convencional." />
+		<meta property="og:image" content="https://res.cloudinary.com/dauuk5yar/image/upload/v1778289379/maracuya_1_SF_cb3dfd.png" />
+		<meta property="og:type" content="website" />
 		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<slot />  <BotonWhatsapp /> </body>
+		<!-- Barra de progreso de scroll -->
+		<div id="scroll-progress"></div>
+
+		<!-- Grano cinematográfico -->
+		<div class="grain-overlay" aria-hidden="true"></div>
+
+		<slot />
+		<BotonWhatsapp />
 	</body>
 </html>
+
+<script>
+	const progressBar = document.getElementById('scroll-progress') as HTMLElement;
+
+	window.addEventListener('scroll', () => {
+		const scrollTop = window.scrollY;
+		const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+		const progress = (scrollTop / docHeight) * 100;
+		progressBar.style.width = `${progress}%`;
+	}, { passive: true });
+</script>
 
 <style is:global>
 	html, body {
@@ -22,11 +45,58 @@ import BotonWhatsapp from '../components/BotonWhatsapp.astro';
 		padding: 0;
 		width: 100%;
 		height: 100%;
-		background-color: #050505; /* Fondo negro ultra premium */
+		background-color: #050505;
 		color: #ffffff;
 		font-family: 'Inter', sans-serif;
-		scroll-behavior: smooth; 
+		scroll-behavior: smooth;
 		overflow-x: hidden;
 	}
+
 	* { box-sizing: border-box; }
+
+	#producto, #historia, #savage-group, #contacto {
+		scroll-margin-top: 65px;
+	}
+
+	/* BARRA DE PROGRESO */
+	#scroll-progress {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 0%;
+		height: 2px;
+		background: linear-gradient(to right, #facc15, #eab308);
+		z-index: 9999;
+		transition: width 0.1s linear;
+		box-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
+	}
+
+	/* GRANO CINEMATOGRÁFICO */
+	.grain-overlay {
+		position: fixed;
+		inset: -50%;
+		width: 200%;
+		height: 200%;
+		pointer-events: none;
+		z-index: 9998;
+		opacity: 0.032;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+		background-repeat: repeat;
+		background-size: 128px 128px;
+		animation: grain 0.8s steps(1) infinite;
+	}
+
+	@keyframes grain {
+		0%   { transform: translate(0, 0); }
+		10%  { transform: translate(-3%, -4%); }
+		20%  { transform: translate(-6%, 2%); }
+		30%  { transform: translate(3%, -1%); }
+		40%  { transform: translate(-1%, 5%); }
+		50%  { transform: translate(-5%, 1%); }
+		60%  { transform: translate(3%, 3%); }
+		70%  { transform: translate(0%, -4%); }
+		80%  { transform: translate(-3%, 2%); }
+		90%  { transform: translate(4%, -2%); }
+		100% { transform: translate(1%, 4%); }
+	}
 </style>
