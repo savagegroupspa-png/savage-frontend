@@ -3,11 +3,11 @@
 ---
 <section id="historia" class="seccion-historia">
     <div class="contenedor-historia">
-        
-        <!-- COLUMNA IZQUIERDA: Texto -->
-        <div class="bloque-texto">
+
+        <div class="bloque-texto reveal-left">
+            <span class="label-seccion">NUESTRA HISTORIA</span>
             <h2 class="titulo-historia">UN SECRETO ENCONTRADO<br>EN EL CAOS.</h2>
-            
+
             <p class="parrafo-grande">
                 En medio de una travesía implacable por el océano, un navegante alcanzó una isla desconocida. Sin provisiones y al borde del agotamiento, la naturaleza le entregó un secreto: frutas de una intensidad jamás vista. No fue solo alimento; fue una misión. Traer a Chile ese elixir de máxima concentración, creado por los dioses de la isla.
             </p>
@@ -15,13 +15,24 @@
             <a href="#producto" class="boton-cta">DESCUBRIR SAVAGE</a>
         </div>
 
-        <!-- COLUMNA DERECHA: Logo con fondo épico -->
-        <div class="bloque-visual">
-            <div class="overlay-visual"></div>  
+        <div class="bloque-visual reveal-right">
+            <div class="overlay-visual"></div>
         </div>
 
     </div>
 </section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => observer.observe(el));
+</script>
 
 <style>
     .seccion-historia {
@@ -34,13 +45,31 @@
     .contenedor-historia {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        min-height: 600px;
+        min-height: 620px;
     }
 
-    /* ── COLUMNA IZQUIERDA ── */
+    /* REVEAL ANIMATIONS */
+    .reveal-left {
+        opacity: 0;
+        transform: translateX(-40px);
+        transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-right {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+    }
+
+    .reveal-left.visible,
+    .reveal-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* COLUMNA IZQUIERDA */
     .bloque-texto {
         padding: 80px 60px;
-        align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -58,6 +87,17 @@
         background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
     }
 
+    .label-seccion {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #facc15;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: block;
+    }
+
     .titulo-historia {
         font-family: 'Oswald', sans-serif;
         font-size: clamp(2rem, 3.5vw, 3.2rem);
@@ -67,20 +107,16 @@
         line-height: 1.1;
         font-weight: 700;
         text-transform: uppercase;
-        text-align: center;
     }
 
     .parrafo-grande {
         font-family: 'Inter', sans-serif;
-        font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
         line-height: 1.85;
-        color: #aaaaaa;
+        color: #888888;
         margin-bottom: 40px;
-        margin-left: auto;
-        margin-right: auto;
         font-weight: 400;
-        max-width: 600px;
-        text-align: justify;
+        max-width: 520px;
     }
 
     .boton-cta {
@@ -93,19 +129,20 @@
         padding: 14px 32px;
         text-decoration: none;
         font-weight: 600;
-        align-self: center;
-        transition: background-color 0.2s ease, transform 0.2s ease;
+        align-self: flex-start;
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .boton-cta:hover {
         background-color: #ffffff;
-        transform: translateY(-2px);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(250, 204, 21, 0.25);
     }
 
-    /* ── COLUMNA DERECHA ── */
+    /* COLUMNA DERECHA */
     .bloque-visual {
         position: relative;
-        background-image: url('https://res.cloudinary.com/dauuk5yar/image/upload/v1776489828/888_toklwx.jpg'); /* Usa tu imagen de fondo épica */
+        background-image: url('https://res.cloudinary.com/dauuk5yar/image/upload/v1776489828/888_toklwx.jpg');
         background-size: cover;
         background-position: center;
         min-height: 500px;
@@ -115,70 +152,68 @@
         overflow: hidden;
     }
 
-    /* Overlay oscuro para que el logo resalte */
     .overlay-visual {
         position: absolute;
         inset: 0;
         background: linear-gradient(
             135deg,
-            rgba(0,0,0,0) 0%,
-            rgba(0,0,0,0) 50%,
-            rgba(0,0,0,0) 80%
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.1) 60%,
+            rgba(250, 204, 21, 0.05) 100%
         );
         z-index: 1;
     }
 
-    .logo-contenedor {
+    /* BADGE FLOTANTE */
+    .badge-flotante {
         position: relative;
         z-index: 2;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 100%;
-        padding: 60px;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 2px solid #facc15;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        text-align: center;
+        animation: float 4s ease-in-out infinite;
+        box-shadow: 0 0 40px rgba(250, 204, 21, 0.15), inset 0 0 30px rgba(250, 204, 21, 0.05);
     }
 
-    .logo-savage {
-        max-width: 320px;
-        width: 70%;
-        filter: drop-shadow(0 0 40px rgba(250, 204, 21, 0.3)) drop-shadow(0 0 80px rgba(0,0,0,0.8));
-        animation: float 4s ease-in-out infinite;
+    .badge-num {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #facc15;
+        line-height: 1;
+    }
+
+    .badge-txt {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        line-height: 1.4;
     }
 
     @keyframes float {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
+        50% { transform: translateY(-12px); }
     }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-        .contenedor-historia {
-            grid-template-columns: 1fr;
-        }
-
-        .bloque-texto {
-            padding: 60px 30px;
-        }
-
-        .bloque-texto::after {
-            display: none;
-        }
-
-        .titulo-historia {
-            font-size: clamp(1.8rem, 7vw, 2.8rem);
-        }
-
-        .parrafo-grande {
-            font-size: 1rem;
-        }
-
-        .bloque-visual {
-            min-height: 380px;
-        }
-
-        .logo-savage {
-            max-width: 220px;
-        }
+        .contenedor-historia { grid-template-columns: 1fr; }
+        .bloque-texto { padding: 60px 30px; align-items: center; text-align: center; }
+        .bloque-texto::after { display: none; }
+        .parrafo-grande { text-align: justify; }
+        .boton-cta { align-self: center; }
+        .titulo-historia { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+        .bloque-visual { min-height: 380px; }
     }
 </style>

@@ -1,10 +1,10 @@
 ---
 // src/components/GamaInteractiva.astro
 
-const imgPremium = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472283/111_qrrooq.png";
-const imgPineapple = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472383/22_re3gj3.png";
-const imgMango = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472452/33_ywldsj.png";
-const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508/44_odmyui.png"; 
+const imgPremium = "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/maracuya_1_SF_ctm8kv.png";
+const imgPineapple = "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/pi%C3%B1a_3_SF_u1oelo.png";
+const imgMango = "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/mango_2_SF_p5dzce.png";
+const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/durazno_4_SF_kqavow.png"; 
 ---
 
 <div id="producto" class="seccion-interactiva">
@@ -66,7 +66,7 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
             tagline: "La Intensidad de la Noche.",
             historia: "Wild Maracuyá nació en las noches legendarias, donde la energía no se detiene. Queríamos capturar la vibración de la música y la intensidad de los encuentros en una lata que no se pareciera a nada.",
             ingredientes: "<strong>Wild Maracuyá:</strong> Acidez brutal con pulpa y <strong>Semillas Crujientes</strong> Aportando una textura y un crujido inigualable.",
-            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472283/111_qrrooq.png",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/maracuya_1_SF_ctm8kv.png",
             claseColor: "tema-passion"
         },
         pineapple: {
@@ -74,7 +74,7 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
             tagline: "El Escape Tropical del Sol.",
             historia: "Diseñada para los días largos y los veranos sin fin bajo el sol de la costa. Wild Piña es tu boleto de ida a un paraíso salvaje. Es el frescor que necesitas para recargar energías y liberar tu instinto.",
             ingredientes: "<strong>Wild Piña:</strong> Frescura pura con pulpa y  <strong>Trozos de Fruta Real:</strong> Sí, hay trozos. Cada sorbo es un recordatorio de que Savage es fruta de verdad.",
-            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472383/22_re3gj3.png",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/pi%C3%B1a_3_SF_u1oelo.png",
             claseColor: "tema-pineapple"
         },
         mango: {
@@ -82,7 +82,7 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
             tagline: "La Energía Terciopelo.",
             historia: "Queríamos crear una energía que te acariciara antes de rugir. Wild Mango es la fusión perfecta entre la suavidad del terciopelo y la fuerza de la fruta madura. Un poder sostenido e imparable.",
             ingredientes: "<strong>Wild Mango:</strong> Dulzor intenso con pulpa densa y real. <strong>Fórmula Pura:</strong> Sin vueltas, solo el poder natural de la fruta impulsando tu instinto.",
-            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472452/33_ywldsj.png",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/mango_2_SF_p5dzce.png",
             claseColor: "tema-mango"
         },
         exotic: {
@@ -90,7 +90,7 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
             tagline: "La Bestia de lo Desconocido.",
             historia: "Queríamos un saber que te sedujera antes de desatar tu instinto. Wild Durazno es la colisión perfecta entre la piel suave del sol y el corazón indomable de la fruta. Un poder orgánico, salvaje e imparable.",
             ingredientes: "<strong>Wild Durzano:</strong> El sabor único del durazno con su textura que acaricia el paladar. <strong>Sabor Potente:</strong> pulpa líquida directamente del huerto.",
-            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508/44_odmyui.png",
+            imagen: "https://res.cloudinary.com/dauuk5yar/image/upload/v1778291084/durazno_4_SF_kqavow.png",
             claseColor: "tema-exotic"
         }
     };
@@ -160,9 +160,9 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
     /* EL ESCENARIO CENTRAL */
     .escenario-wrapper {
         width: 100%;
-        max-width: 1100px;
+        max-width: 1200px;
         border-radius: 40px;
-        padding: 60px 40px 40px;
+        padding: 60px 70px 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -181,24 +181,61 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
         align-items: center;
         justify-content: space-between;
         gap: 40px;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
+        min-height: 520px;
     }
 
     /* Textos Izquierda */
     .info-dinamica {
         flex: 1;
+        min-width: 380px;
+        max-width: 560px;
         color: white;
         transition: opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
     }
 
-    .info-dinamica h2 { font-family: 'Oswald', sans-serif; font-size: 4rem; margin: 0; line-height: 1; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-    .info-dinamica h3 { font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: #facc15; margin: 10px 0 30px; letter-spacing: 1px; }
-    
-    .bloque-info { margin-bottom: 25px; }
-    .bloque-info h4 { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 8px; opacity: 0.6; }
-    .bloque-info p { font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.6; opacity: 0.9; }
+    .info-dinamica h2 {
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(3.5rem, 5vw, 6rem);
+        margin: 0 0 12px 0;
+        line-height: 0.95;
+        letter-spacing: -1px;
+        text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
 
-    /* Imagen Derecha (IMAGEN RECTANGULAR NORMAL) */
+    .info-dinamica h3 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.6rem;
+        color: #facc15;
+        margin: 0 0 36px 0;
+        letter-spacing: 0.5px;
+        font-style: italic;
+    }
+
+    .bloque-info { margin-bottom: 24px; }
+
+    .bloque-info h4 {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 3px;
+        margin: 0 0 8px 0;
+        opacity: 0.5;
+        text-transform: uppercase;
+    }
+
+    .bloque-info p {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        opacity: 0.88;
+        margin: 0;
+    }
+
+    /* Imagen Derecha */
     .lata-destacada-container {
         flex: 1;
         display: flex;
@@ -207,17 +244,23 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
     }
 
     .contenedor-imagen-grande {
-        width: 100%;
-        max-width: 260px;
-        border-radius: 16px; 
-        overflow: hidden;
-        filter: drop-shadow(0 25px 35px rgba(0,0,0,0.5));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(0 40px 80px rgba(0,0,0,0.8));
     }
 
     .contenedor-imagen-grande img {
-        width: 100%;
+        height: 520px;
+        width: auto;
         display: block;
         transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+        animation: floatCan 5s ease-in-out infinite;
+    }
+
+    @keyframes floatCan {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-14px) scale(1.02); }
     }
 
     /* PARTE INFERIOR: SELECTOR DE LATITAS */
@@ -228,6 +271,7 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
         padding: 20px 40px;
         border-radius: 50px;
         backdrop-filter: blur(10px);
+        align-items: flex-end;
     }
 
     .latita-btn {
@@ -236,8 +280,10 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
         cursor: pointer;
         padding: 0;
         transition: transform 0.3s ease, filter 0.3s ease;
-        filter: grayscale(80%) opacity(0.6); 
+        filter: grayscale(80%) opacity(0.6);
         outline: none;
+        display: flex;
+        align-items: flex-end;
     }
 
     .latita-btn:hover, .latita-btn.activo {
@@ -245,17 +291,23 @@ const imgExotic = "https://res.cloudinary.com/dauuk5yar/image/upload/v1776472508
         filter: grayscale(0%) opacity(1);
     }
 
+    .latita-btn.activo {
+        filter: grayscale(0%) opacity(1) drop-shadow(0 0 12px rgba(250, 204, 21, 0.6));
+    }
+
     .latita-img {
-        width: 55px;
-        height: auto;
-        border-radius: 8px;
+        width: auto;
+        height: 80px;
+        object-fit: contain;
         display: block;
     }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-        .visor-principal { flex-direction: column-reverse; text-align: center; }
-        .info-dinamica h2 { font-size: 3rem; }
+        .visor-principal { flex-direction: column-reverse; text-align: center; min-height: unset; gap: 30px; }
+        .info-dinamica { min-width: unset; }
+        .info-dinamica h2 { font-size: 2.8rem; }
+        .contenedor-imagen-grande img { height: 320px; }
         .selector-sabores { gap: 15px; padding: 15px 25px; }
         .latita-img { width: 45px; }
     }
