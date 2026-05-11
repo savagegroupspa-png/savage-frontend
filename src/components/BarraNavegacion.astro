@@ -3,6 +3,7 @@
 ---
 <header class="barra-superior">
     <div class="contenedor-menu">
+
         <a href="/" class="logo-marca">SAVAGE</a>
 
         <nav class="enlaces-menu">
@@ -13,14 +14,39 @@
         </nav>
 
         <a href="#contacto" class="boton-preorden">PRE-ORDEN B2B</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
+
+    <nav class="menu-mobile" id="menu-mobile">
+        <a href="#producto" class="link-mobile">PRODUCTO</a>
+        <a href="#historia" class="link-mobile">NUESTRA HISTORIA</a>
+        <a href="#savage-group" class="link-mobile">SAVAGE GROUP</a>
+        <a href="#contacto" class="link-mobile">CONTACTO</a>
+        <a href="#contacto" class="boton-preorden-mobile">PRE-ORDEN B2B</a>
+    </nav>
 </header>
+
+<script>
+    const hamburger = document.getElementById('hamburger') as HTMLElement;
+    const menuMobile = document.getElementById('menu-mobile') as HTMLElement;
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('activo');
+        menuMobile.classList.toggle('abierto');
+    });
+
+</script>
 
 <style>
     .barra-superior {
         width: 100%;
-        background-color: #000000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+        background-color: #080808;
+        border-bottom: 2px solid #facc15;
         position: fixed;
         top: 0;
         left: 0;
@@ -30,7 +56,7 @@
     .contenedor-menu {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 15px 30px;
+        padding: 14px 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -38,50 +64,150 @@
 
     .logo-marca {
         font-family: 'Oswald', sans-serif;
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 700;
-        color: #ffffff;
+        color: #facc15;
         text-decoration: none;
-        letter-spacing: 2px;
+        letter-spacing: 4px;
     }
 
     .enlaces-menu {
         display: flex;
         gap: 35px;
+        align-items: center;
     }
 
     .enlaces-menu a {
         font-family: 'Inter', sans-serif;
-        color: #a3a3a3; 
+        color: #888888;
         text-decoration: none;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 600;
-        letter-spacing: 1px;
-        transition: color 0.3s ease;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: color 0.25s ease;
+        position: relative;
+        padding-bottom: 2px;
+    }
+
+    .enlaces-menu a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #facc15;
+        transition: width 0.25s ease;
     }
 
     .enlaces-menu a:hover {
-        color: #ffffff; 
+        color: #ffffff;
+    }
+
+    .enlaces-menu a:hover::after {
+        width: 100%;
     }
 
     .boton-preorden {
         font-family: 'Inter', sans-serif;
-        border: 1px solid #ffffff;
-        color: #ffffff;
+        background-color: #facc15;
+        color: #000000;
         text-decoration: none;
-        padding: 8px 25px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        border-radius: 4px; 
-        transition: all 0.3s ease;
+        padding: 8px 22px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        transition: background-color 0.25s ease, transform 0.25s ease;
     }
 
     .boton-preorden:hover {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #eab308;
+        transform: translateY(-2px);
     }
 
+    /* HAMBURGER */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger.activo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.activo span:nth-child(2) { opacity: 0; }
+    .hamburger.activo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* MENU MOBILE */
+    .menu-mobile {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #080808;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        border-top: 1px solid #1a1a1a;
+    }
+
+    .menu-mobile.abierto {
+        max-height: 400px;
+        padding: 16px 0 24px;
+    }
+
+    .link-mobile {
+        font-family: 'Inter', sans-serif;
+        color: #888888;
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        padding: 13px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #111;
+        transition: color 0.2s ease;
+    }
+
+    .link-mobile:hover { color: #ffffff; }
+
+    .boton-preorden-mobile {
+        font-family: 'Inter', sans-serif;
+        background-color: #facc15;
+        color: #000000;
+        text-decoration: none;
+        padding: 10px 28px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        border-radius: 3px;
+        margin-top: 16px;
+        transition: background-color 0.2s ease;
+    }
+
+    .boton-preorden-mobile:hover { background-color: #eab308; }
+
     @media (max-width: 900px) {
-        .enlaces-menu { display: none; } 
+        .enlaces-menu { display: none; }
+        .boton-preorden { display: none; }
+        .hamburger { display: flex; }
+        .menu-mobile { display: flex; }
     }
 </style>

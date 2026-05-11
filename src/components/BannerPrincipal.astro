@@ -4,100 +4,176 @@
 <section class="banner-contenedor">
     <video class="video-fondo" autoplay loop muted playsinline>
         <source src="https://res.cloudinary.com/dauuk5yar/video/upload/v1773679341/savage_video_xjtzxr.mp4" type="video/mp4" />
-        Tu navegador no soporta videos HTML5.
     </video>
 
     <div class="capa-oscura"></div>
 
     <div class="contenido-banner">
-        <h1 class="titulo-principal">50% FRUTA 100% SAVAGE</h1>
-        <p class="subtitulo">LIBERA TU INSTINTO CON EL SABOR AUTÉNTICO DE FRUTA REAL.</p>
-        
-       <a href="#producto" class="boton-dorado">DESCUBRE LA GAMA</a>
+        <p class="eyebrow animate-up delay-0">SAVAGE GROUP SpA — CHILE</p>
+        <h1 class="titulo-principal animate-up delay-1">50% FRUTA<br>100% SAVAGE</h1>
+        <p class="subtitulo animate-up delay-2">LIBERA TU INSTINTO CON EL SABOR AUTÉNTICO DE FRUTA REAL.</p>
+        <a href="#producto" class="boton-dorado animate-up delay-3">DESCUBRE LA GAMA</a>
+    </div>
+
+    <div class="scroll-indicator">
+        <span class="scroll-label">SCROLL</span>
+        <div class="scroll-arrow">
+            <svg width="16" height="24" viewBox="0 0 16 24" fill="none">
+                <path d="M8 0v20M1 13l7 7 7-7" stroke="#facc15" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
     </div>
 </section>
 
 <style>
     .banner-contenedor {
         position: relative;
-        height: 100vh; /* Ocupa el 100% de la pantalla visible */
+        height: 100vh;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        overflow: hidden; /* Evita barras de desplazamiento si el video es muy grande */
+        overflow: hidden;
     }
 
-    /* Estilos del video para que cubra todo el fondo sin deformarse */
     .video-fondo {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Recorta los bordes para llenar la pantalla */
+        object-fit: cover;
         z-index: 1;
     }
 
-    /* Capa semi-transparente para oscurecer el video y que resalte el texto */
     .capa-oscura {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.6); /* Ajusta el 0.6 si quieres que sea más o menos oscuro */
+        background: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.3) 0%,
+            rgba(0,0,0,0.6) 50%,
+            rgba(0,0,0,0.8) 100%
+        );
         z-index: 2;
     }
 
-    /* Contenedor de los textos */
     .contenido-banner {
         position: relative;
-        z-index: 3; /* Tiene que estar sobre el video y la capa oscura */
+        z-index: 3;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0 20px;
     }
 
-    /* Tipografía calcada de tu diseño */
+    .eyebrow {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #facc15;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin: 0 0 20px 0;
+    }
+
     .titulo-principal {
         font-family: 'Oswald', sans-serif;
-        font-size: clamp(3rem, 8vw, 6rem); /* Se achica en celulares y crece en PC */
+        font-size: clamp(3.5rem, 9vw, 7rem);
         font-weight: 700;
         color: #ffffff;
-        margin: 0 0 10px 0;
-        line-height: 1.1;
-        letter-spacing: 1px;
+        margin: 0 0 20px 0;
+        line-height: 1.0;
+        letter-spacing: 2px;
+        text-shadow: 0 4px 30px rgba(0,0,0,0.5);
     }
 
     .subtitulo {
         font-family: 'Inter', sans-serif;
-        font-size: clamp(1rem, 2vw, 1.2rem);
+        font-size: clamp(0.85rem, 1.8vw, 1.1rem);
         font-weight: 400;
-        color: #e5e5e5;
-        margin: 0 0 40px 0;
-        letter-spacing: 2px;
+        color: #cccccc;
+        margin: 0 0 45px 0;
+        letter-spacing: 3px;
         text-transform: uppercase;
+        max-width: 500px;
     }
 
-    /* El botón dorado "Descubre la Gama" */
     .boton-dorado {
         font-family: 'Inter', sans-serif;
-        background-color: #facc15; /* Dorado premium */
+        background-color: #facc15;
         color: #000000;
         text-decoration: none;
-        padding: 12px 35px;
-        font-size: 1rem;
+        padding: 14px 40px;
+        font-size: 0.9rem;
         font-weight: 700;
         border-radius: 4px;
         text-transform: uppercase;
-        transition: transform 0.3s ease, background-color 0.3s ease;
+        letter-spacing: 2px;
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .boton-dorado:hover {
-        background-color: #eab308; /* Un dorado ligeramente más oscuro al pasar el mouse */
-        transform: translateY(-3px); /* Pequeño salto hacia arriba */
+        background-color: #eab308;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(250, 204, 21, 0.3);
+    }
+
+    /* ANIMACIONES DE ENTRADA */
+    .animate-up {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .delay-0 { animation-delay: 0.3s; }
+    .delay-1 { animation-delay: 0.55s; }
+    .delay-2 { animation-delay: 0.8s; }
+    .delay-3 { animation-delay: 1.05s; }
+
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* SCROLL INDICATOR */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        opacity: 0;
+        animation: fadeIn 1s ease 1.6s forwards;
+    }
+
+    .scroll-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        color: rgba(255,255,255,0.4);
+    }
+
+    .scroll-arrow {
+        animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(6px); }
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; }
     }
 </style>
