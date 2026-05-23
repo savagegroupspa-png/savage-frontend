@@ -2,10 +2,7 @@
 // src/components/SeccionEncuentranos.astro
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
 <section class="encuentranos-wrapper" id="donde-encontrarnos">
-
     <div class="encuentranos-inner">
 
         <!-- HEADER -->
@@ -19,7 +16,7 @@
         <div class="enc-body">
 
             <!-- PANEL IZQUIERDO: ZONAS -->
-            <div class="enc-lista" id="enc-lista">
+            <div class="enc-lista">
 
                 <!-- VIÑA DEL MAR -->
                 <div class="zona-grupo">
@@ -32,26 +29,17 @@
                     <div class="zona-locales" id="zona-vina">
                         <button class="local-item" data-lat="35.6762" data-lng="139.6503" data-nombre="Botillería El Marino" data-dir="Av. San Martín 456, Viña del Mar">
                             <span class="local-icono">🏪</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Botillería El Marino</span>
-                                <span class="local-dir">Av. San Martín 456</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Botillería El Marino</span><span class="local-dir">Av. San Martín 456</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="48.8566" data-lng="2.3522" data-nombre="Minimarket La Costa" data-dir="Av. España 1200, Viña del Mar">
                             <span class="local-icono">🛒</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Minimarket La Costa</span>
-                                <span class="local-dir">Av. España 1200</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Minimarket La Costa</span><span class="local-dir">Av. España 1200</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="40.7128" data-lng="-74.0060" data-nombre="Bar Sunset Viña" data-dir="Av. Libertad 890, Viña del Mar">
                             <span class="local-icono">🍸</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Bar Sunset Viña</span>
-                                <span class="local-dir">Av. Libertad 890</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Bar Sunset Viña</span><span class="local-dir">Av. Libertad 890</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                     </div>
@@ -68,26 +56,17 @@
                     <div class="zona-locales" id="zona-santiago">
                         <button class="local-item" data-lat="51.5074" data-lng="-0.1278" data-nombre="Botillería Metro Baquedano" data-dir="Av. Irarrázaval 345, Santiago">
                             <span class="local-icono">🏪</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Botillería Metro Baquedano</span>
-                                <span class="local-dir">Av. Irarrázaval 345</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Botillería Metro Baquedano</span><span class="local-dir">Av. Irarrázaval 345</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="-33.8688" data-lng="151.2093" data-nombre="Minimarket El Barrio" data-dir="Av. Providencia 2000, Santiago">
                             <span class="local-icono">🛒</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Minimarket El Barrio</span>
-                                <span class="local-dir">Av. Providencia 2000</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Minimarket El Barrio</span><span class="local-dir">Av. Providencia 2000</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="25.2048" data-lng="55.2708" data-nombre="Club The District" data-dir="Av. Suecia 152, Santiago">
                             <span class="local-icono">🍸</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Club The District</span>
-                                <span class="local-dir">Av. Suecia 152</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Club The District</span><span class="local-dir">Av. Suecia 152</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                     </div>
@@ -104,26 +83,17 @@
                     <div class="zona-locales" id="zona-sanantonio">
                         <button class="local-item" data-lat="-22.9068" data-lng="-43.1729" data-nombre="Botillería Puerto" data-dir="Balmaceda 123, San Antonio">
                             <span class="local-icono">🏪</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Botillería Puerto</span>
-                                <span class="local-dir">Balmaceda 123</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Botillería Puerto</span><span class="local-dir">Balmaceda 123</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="41.9028" data-lng="12.4964" data-nombre="Minimarket Del Mar" data-dir="O'Higgins 456, San Antonio">
                             <span class="local-icono">🛒</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Minimarket Del Mar</span>
-                                <span class="local-dir">O'Higgins 456</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Minimarket Del Mar</span><span class="local-dir">O'Higgins 456</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="52.5200" data-lng="13.4050" data-nombre="Bar El Navegante" data-dir="Av. Barros Luco 789, San Antonio">
                             <span class="local-icono">🍸</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Bar El Navegante</span>
-                                <span class="local-dir">Av. Barros Luco 789</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Bar El Navegante</span><span class="local-dir">Av. Barros Luco 789</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                     </div>
@@ -140,26 +110,17 @@
                     <div class="zona-locales" id="zona-llolleo">
                         <button class="local-item" data-lat="19.0760" data-lng="72.8777" data-nombre="Minimarket El Centro" data-dir="Manuel Rodríguez 234, Llolleo">
                             <span class="local-icono">🛒</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Minimarket El Centro</span>
-                                <span class="local-dir">Manuel Rodríguez 234</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Minimarket El Centro</span><span class="local-dir">Manuel Rodríguez 234</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="52.3676" data-lng="4.9041" data-nombre="Botillería Los Amigos" data-dir="Portales 567, Llolleo">
                             <span class="local-icono">🏪</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Botillería Los Amigos</span>
-                                <span class="local-dir">Portales 567</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Botillería Los Amigos</span><span class="local-dir">Portales 567</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="-34.6037" data-lng="-58.3816" data-nombre="Almacén Don Pedro" data-dir="Freire 890, Llolleo">
                             <span class="local-icono">🏬</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Almacén Don Pedro</span>
-                                <span class="local-dir">Freire 890</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Almacén Don Pedro</span><span class="local-dir">Freire 890</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                     </div>
@@ -176,26 +137,17 @@
                     <div class="zona-locales" id="zona-barrancas">
                         <button class="local-item" data-lat="19.4326" data-lng="-99.1332" data-nombre="Minimarket Barrancas" data-dir="Av. Principal 123, Barrancas">
                             <span class="local-icono">🛒</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Minimarket Barrancas</span>
-                                <span class="local-dir">Av. Principal 123</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Minimarket Barrancas</span><span class="local-dir">Av. Principal 123</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="-33.9249" data-lng="18.4241" data-nombre="Botillería El Faro" data-dir="Cochrane 456, Barrancas">
                             <span class="local-icono">🏪</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Botillería El Faro</span>
-                                <span class="local-dir">Cochrane 456</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Botillería El Faro</span><span class="local-dir">Cochrane 456</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                         <button class="local-item" data-lat="13.7563" data-lng="100.5018" data-nombre="Bar La Terraza" data-dir="Errázuriz 789, Barrancas">
                             <span class="local-icono">🍸</span>
-                            <div class="local-info">
-                                <span class="local-nombre">Bar La Terraza</span>
-                                <span class="local-dir">Errázuriz 789</span>
-                            </div>
+                            <div class="local-info"><span class="local-nombre">Bar La Terraza</span><span class="local-dir">Errázuriz 789</span></div>
                             <svg class="local-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
                         </button>
                     </div>
@@ -216,88 +168,75 @@
     </div>
 </section>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
-<script is:inline>
-document.addEventListener('DOMContentLoaded', () => {
+<script>
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
-    // ── MAPA ──
-    const map = L.map('enc-mapa', {
-        center: [-33.4, -70.6],
-        zoom: 4,
-        zoomControl: false,
-        attributionControl: false,
+const map = L.map('enc-mapa', {
+    center: [-33.4, -70.6],
+    zoom: 4,
+    zoomControl: false,
+    attributionControl: false,
+});
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+}).addTo(map);
+
+L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+const iconoDorado = L.divIcon({
+    className: '',
+    html: '<div class="marcador-savage"></div>',
+    iconSize: [20, 28],
+    iconAnchor: [10, 28],
+});
+
+let marcadorActivo: L.Marker | null = null;
+
+// Accordions
+document.querySelectorAll<HTMLButtonElement>('.zona-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const zona = btn.dataset.zona!;
+        const lista = document.getElementById(`zona-${zona}`)!;
+        const isOpen = lista.classList.contains('open');
+        document.querySelectorAll('.zona-locales').forEach(l => l.classList.remove('open'));
+        document.querySelectorAll('.zona-header').forEach(b => b.classList.remove('activo'));
+        if (!isOpen) {
+            lista.classList.add('open');
+            btn.classList.add('activo');
+        }
     });
+});
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 19,
-    }).addTo(map);
+// Click en local → vuela al mapa
+document.querySelectorAll<HTMLButtonElement>('.local-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lat = parseFloat(btn.dataset.lat!);
+        const lng = parseFloat(btn.dataset.lng!);
+        const nombre = btn.dataset.nombre!;
+        const dir = btn.dataset.dir!;
 
-    L.control.zoom({ position: 'bottomright' }).addTo(map);
+        document.querySelectorAll('.local-item').forEach(b => b.classList.remove('seleccionado'));
+        btn.classList.add('seleccionado');
 
-    // Marcador dorado personalizado
-    const iconoDorado = L.divIcon({
-        className: '',
-        html: `<div class="marcador-savage"></div>`,
-        iconSize: [20, 20],
-        iconAnchor: [10, 10],
-    });
+        const infoEl = document.getElementById('mapa-info')!;
+        infoEl.innerHTML = `
+            <span class="mapa-info-icono">📍</span>
+            <div>
+                <p class="mapa-info-nombre">${nombre}</p>
+                <p class="mapa-info-dir">${dir}</p>
+            </div>
+        `;
+        infoEl.classList.add('visible');
 
-    let marcadorActivo = null;
+        if (marcadorActivo) marcadorActivo.remove();
+        marcadorActivo = L.marker([lat, lng], { icon: iconoDorado })
+            .addTo(map)
+            .bindPopup(`<b>${nombre}</b><br>${dir}`, { className: 'popup-savage' })
+            .openPopup();
 
-    // ── ACCORDIONS DE ZONA ──
-    document.querySelectorAll<HTMLButtonElement>('.zona-header').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const zona = btn.dataset.zona!;
-            const lista = document.getElementById(`zona-${zona}`)!;
-            const isOpen = lista.classList.contains('open');
-
-            // Cerrar todas
-            document.querySelectorAll('.zona-locales').forEach(l => l.classList.remove('open'));
-            document.querySelectorAll('.zona-header').forEach(b => b.classList.remove('activo'));
-
-            if (!isOpen) {
-                lista.classList.add('open');
-                btn.classList.add('activo');
-            }
-        });
-    });
-
-    // ── CLICK EN LOCAL ──
-    document.querySelectorAll<HTMLButtonElement>('.local-item').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lat = parseFloat(btn.dataset.lat!);
-            const lng = parseFloat(btn.dataset.lng!);
-            const nombre = btn.dataset.nombre!;
-            const dir = btn.dataset.dir!;
-
-            // Limpiar selección anterior
-            document.querySelectorAll('.local-item').forEach(b => b.classList.remove('seleccionado'));
-            btn.classList.add('seleccionado');
-
-            // Actualizar info overlay
-            const infoEl = document.getElementById('mapa-info')!;
-            infoEl.innerHTML = `
-                <span class="mapa-info-icono">📍</span>
-                <div>
-                    <p class="mapa-info-nombre">${nombre}</p>
-                    <p class="mapa-info-dir">${dir}</p>
-                </div>
-            `;
-            infoEl.classList.add('visible');
-
-            // Mover o crear marcador
-            if (marcadorActivo) {
-                marcadorActivo.remove();
-            }
-            marcadorActivo = L.marker([lat, lng], { icon: iconoDorado })
-                .addTo(map)
-                .bindPopup(`<b>${nombre}</b><br>${dir}`, {
-                    className: 'popup-savage',
-                })
-                .openPopup();
-
-            map.flyTo([lat, lng], 15, { duration: 1.4, easeLinearity: 0.25 });
-        });
+        map.flyTo([lat, lng], 15, { duration: 1.4, easeLinearity: 0.25 });
     });
 });
 </script>
@@ -309,20 +248,30 @@ document.addEventListener('DOMContentLoaded', () => {
         background-color: #facc15;
         border-radius: 50% 50% 50% 0;
         transform: rotate(-45deg);
-        box-shadow: 0 0 12px rgba(250, 204, 21, 0.7);
+        box-shadow: 0 0 14px rgba(250, 204, 21, 0.8);
         border: 2px solid #000;
     }
-    .leaflet-popup-content-wrapper.popup-savage,
-    .popup-savage .leaflet-popup-content-wrapper {
-        background-color: #0d0d0d;
-        border: 1px solid #facc15;
-        border-radius: 8px;
-        color: #ffffff;
-        font-family: 'Inter', sans-serif;
-        font-size: 0.85rem;
+    .leaflet-popup-content-wrapper {
+        background-color: #0d0d0d !important;
+        border: 1px solid #facc15 !important;
+        border-radius: 8px !important;
+        color: #ffffff !important;
+        font-family: 'Inter', sans-serif !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.6) !important;
     }
-    .popup-savage .leaflet-popup-tip {
-        background-color: #facc15;
+    .leaflet-popup-tip {
+        background-color: #facc15 !important;
+    }
+    .leaflet-popup-content b {
+        color: #facc15;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+    .leaflet-popup-content {
+        color: #888 !important;
+        font-size: 0.78rem !important;
+        line-height: 1.5 !important;
+        margin: 10px 14px !important;
     }
     .leaflet-popup-close-button {
         color: #facc15 !important;
@@ -336,21 +285,20 @@ document.addEventListener('DOMContentLoaded', () => {
         border-top: 1px solid #111;
         padding: 120px 20px;
     }
-
     .encuentranos-inner {
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    /* ── HEADER ── */
+    /* HEADER */
     .enc-header {
         text-align: center;
         margin-bottom: 80px;
     }
     .enc-badge {
         display: inline-block;
-        border: 1px solid rgba(250, 204, 21, 0.35);
-        background-color: rgba(250, 204, 21, 0.08);
+        border: 1px solid rgba(250,204,21,0.35);
+        background-color: rgba(250,204,21,0.08);
         color: #facc15;
         font-family: 'Inter', sans-serif;
         font-size: 0.68rem; font-weight: 700;
@@ -361,7 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .enc-titulo {
         font-family: 'Oswald', sans-serif;
         font-size: clamp(2.8rem, 6vw, 5rem);
-        font-weight: 700; color: #ffffff;
+        font-weight: 700; color: #fff;
         letter-spacing: 2px; line-height: 1.05;
         margin: 0 0 18px;
     }
@@ -369,10 +317,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .enc-subtitulo {
         font-family: 'Inter', sans-serif;
         font-size: 0.95rem; color: #555;
-        letter-spacing: 0.3px; line-height: 1.7;
+        line-height: 1.7;
     }
 
-    /* ── BODY ── */
+    /* BODY */
     .enc-body {
         display: grid;
         grid-template-columns: 380px 1fr;
@@ -380,122 +328,78 @@ document.addEventListener('DOMContentLoaded', () => {
         align-items: start;
     }
 
-    /* ── LISTA ── */
-    .enc-lista {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-    }
+    /* LISTA */
+    .enc-lista { display: flex; flex-direction: column; gap: 4px; }
 
     .zona-grupo {
         border-radius: 10px;
         overflow: hidden;
         border: 1px solid #1a1a1a;
     }
-
     .zona-header {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 16px 20px;
-        background-color: #0d0d0d;
-        border: none;
-        cursor: pointer;
-        text-align: left;
+        width: 100%; display: flex; align-items: center; gap: 12px;
+        padding: 16px 20px; background-color: #0d0d0d;
+        border: none; cursor: pointer; text-align: left;
         transition: background-color 0.2s ease;
     }
-    .zona-header:hover,
-    .zona-header.activo {
-        background-color: #111108;
-    }
-    .zona-header.activo .zona-dot {
-        background-color: #facc15;
-        box-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
-    }
+    .zona-header:hover, .zona-header.activo { background-color: #111108; }
+    .zona-header.activo .zona-dot { background-color: #facc15; box-shadow: 0 0 8px rgba(250,204,21,0.5); }
     .zona-header.activo .zona-nombre { color: #facc15; }
     .zona-header.activo .zona-arrow { transform: rotate(180deg); }
 
     .zona-dot {
-        width: 8px; height: 8px;
-        border-radius: 50%;
-        background-color: #333;
-        flex-shrink: 0;
+        width: 8px; height: 8px; border-radius: 50%;
+        background-color: #333; flex-shrink: 0;
         transition: background-color 0.2s, box-shadow 0.2s;
     }
     .zona-nombre {
         font-family: 'Oswald', sans-serif;
         font-size: 0.9rem; font-weight: 700;
-        color: #aaa; letter-spacing: 2px;
-        text-transform: uppercase;
-        flex: 1;
-        transition: color 0.2s;
+        color: #aaa; letter-spacing: 2px; text-transform: uppercase;
+        flex: 1; transition: color 0.2s;
     }
     .zona-count {
         font-family: 'Inter', sans-serif;
-        font-size: 0.65rem; color: #333;
-        letter-spacing: 1px;
+        font-size: 0.65rem; color: #333; letter-spacing: 1px;
     }
     .zona-arrow {
         width: 16px; height: 16px;
         stroke: #444; stroke-width: 2;
         fill: none; stroke-linecap: round; stroke-linejoin: round;
-        flex-shrink: 0;
-        transition: transform 0.3s ease;
+        flex-shrink: 0; transition: transform 0.3s ease;
     }
 
     .zona-locales {
-        max-height: 0;
-        overflow: hidden;
+        max-height: 0; overflow: hidden;
         transition: max-height 0.4s ease;
         background-color: #080808;
     }
-    .zona-locales.open {
-        max-height: 400px;
-    }
+    .zona-locales.open { max-height: 400px; }
 
     .local-item {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 14px;
+        width: 100%; display: flex; align-items: center; gap: 14px;
         padding: 14px 20px 14px 28px;
-        background: none;
-        border: none;
-        border-top: 1px solid #111;
-        cursor: pointer;
-        text-align: left;
+        background: none; border: none; border-top: 1px solid #111;
+        cursor: pointer; text-align: left;
         transition: background-color 0.2s ease;
     }
-    .local-item:hover {
-        background-color: #0f0f0f;
-    }
+    .local-item:hover { background-color: #0f0f0f; }
     .local-item.seleccionado {
-        background-color: rgba(250, 204, 21, 0.05);
+        background-color: rgba(250,204,21,0.05);
         border-left: 2px solid #facc15;
     }
     .local-item.seleccionado .local-nombre { color: #facc15; }
 
-    .local-icono {
-        font-size: 1.1rem;
-        flex-shrink: 0;
-    }
-    .local-info {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-        flex: 1;
-    }
+    .local-icono { font-size: 1.1rem; flex-shrink: 0; }
+    .local-info { display: flex; flex-direction: column; gap: 3px; flex: 1; }
     .local-nombre {
         font-family: 'Inter', sans-serif;
         font-size: 0.82rem; font-weight: 600;
-        color: #ccc; letter-spacing: 0.3px;
-        transition: color 0.2s;
+        color: #ccc; letter-spacing: 0.3px; transition: color 0.2s;
     }
     .local-dir {
         font-family: 'Inter', sans-serif;
-        font-size: 0.72rem; color: #444;
-        letter-spacing: 0.3px;
+        font-size: 0.72rem; color: #444; letter-spacing: 0.3px;
     }
     .local-arrow {
         width: 14px; height: 14px;
@@ -505,66 +409,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     .local-item.seleccionado .local-arrow { stroke: #facc15; }
 
-    /* ── MAPA ── */
+    /* MAPA */
     .enc-mapa-wrapper {
-        position: relative;
-        height: 560px;
-        border-radius: 16px;
-        overflow: hidden;
+        position: relative; height: 560px;
+        border-radius: 16px; overflow: hidden;
         border: 1px solid #1a1a1a;
     }
-    #enc-mapa {
-        width: 100%;
-        height: 100%;
-    }
+    #enc-mapa { width: 100%; height: 100%; }
 
     .mapa-overlay-info {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        background-color: rgba(5, 5, 5, 0.92);
-        border: 1px solid #1e1e1e;
-        border-radius: 10px;
-        padding: 14px 18px;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        z-index: 1000;
-        backdrop-filter: blur(8px);
+        position: absolute; bottom: 20px; left: 20px; right: 20px;
+        background-color: rgba(5,5,5,0.92);
+        border: 1px solid #1e1e1e; border-radius: 10px;
+        padding: 14px 18px; display: flex; align-items: center; gap: 12px;
+        z-index: 1000; backdrop-filter: blur(8px);
         transition: border-color 0.3s ease;
     }
-    .mapa-overlay-info.visible {
-        border-color: rgba(250, 204, 21, 0.3);
-    }
-    .mapa-info-icono {
-        font-size: 1.2rem;
-        flex-shrink: 0;
-    }
+    .mapa-overlay-info.visible { border-color: rgba(250,204,21,0.3); }
+    .mapa-info-icono { font-size: 1.2rem; flex-shrink: 0; }
     .mapa-info-texto {
         font-family: 'Inter', sans-serif;
-        font-size: 0.8rem; color: #444;
-        margin: 0; letter-spacing: 0.3px;
+        font-size: 0.8rem; color: #444; margin: 0;
     }
     .mapa-info-nombre {
         font-family: 'Inter', sans-serif;
-        font-size: 0.85rem; font-weight: 700;
-        color: #facc15; margin: 0 0 3px;
+        font-size: 0.85rem; font-weight: 700; color: #facc15; margin: 0 0 3px;
     }
     .mapa-info-dir {
         font-family: 'Inter', sans-serif;
-        font-size: 0.75rem; color: #666;
-        margin: 0;
+        font-size: 0.75rem; color: #666; margin: 0;
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-        .enc-body {
-            grid-template-columns: 1fr;
-        }
-        .enc-mapa-wrapper {
-            height: 400px;
-        }
+        .enc-body { grid-template-columns: 1fr; }
+        .enc-mapa-wrapper { height: 400px; }
     }
     @media (max-width: 480px) {
         .encuentranos-wrapper { padding: 80px 16px; }
