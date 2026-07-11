@@ -1,0 +1,339 @@
+---
+// src/components/SeccionDistribuidores.astro
+---
+
+<section class="seccion-distribuidores">
+
+    <!-- HEADLINE -->
+    <div class="header-wrapper">
+        <span class="badge">PROGRAMA DE DISTRIBUCIÓN</span>
+        <h2 class="titulo">¿POR QUÉ DISTRIBUIR<br><span class="titulo-dorado">SAVAGE?</span></h2>
+        <p class="subtitulo">Los números que necesitas saber antes de tomar la decisión.</p>
+    </div>
+
+    <!-- MÉTRICAS CLAVE -->
+    <div class="metricas-grid">
+
+        <div class="metrica-card" data-reveal>
+            <span class="metrica-numero">35<span class="metrica-unidad">%</span></span>
+            <span class="metrica-label">MARGEN PROMEDIO</span>
+            <p class="metrica-desc">Sobre precio de venta al público. Uno de los márgenes más altos del segmento de bebidas.</p>
+        </div>
+
+        <div class="metrica-card destacado" data-reveal>
+            <div class="metrica-badge-top">MÁS VENDIDO</div>
+            <span class="metrica-numero">1<span class="metrica-unidad">zona</span></span>
+            <span class="metrica-label">EXCLUSIVIDAD GARANTIZADA</span>
+            <p class="metrica-desc">Un solo distribuidor por zona geográfica. Tu territorio, sin competencia interna.</p>
+        </div>
+
+        <div class="metrica-card" data-reveal>
+            <span class="metrica-numero">5<span class="metrica-unidad">días</span></span>
+            <span class="metrica-label">TIEMPO DE ENTREGA</span>
+            <p class="metrica-desc">Desde la confirmación del pedido hasta tu bodega. Logística directa sin intermediarios.</p>
+        </div>
+
+        <div class="metrica-card" data-reveal>
+            <span class="metrica-numero">6<span class="metrica-unidad">cajas</span></span>
+            <span class="metrica-label">PEDIDO MÍNIMO</span>
+            <p class="metrica-desc">Sin grandes barreras de entrada. Ideal para botillerías, minimarkets y negocios locales.</p>
+        </div>
+
+    </div>
+
+    <!-- PILARES / BENEFICIOS -->
+    <div class="pilares-wrapper">
+        <h3 class="pilares-titulo">LO QUE INCLUYE SER DISTRIBUIDOR</h3>
+        <div class="pilares-grid">
+
+            <div class="pilar" data-reveal>
+                <div class="pilar-icono">📦</div>
+                <h4>DOSSIER COMERCIAL</h4>
+                <p>Lista de precios mayoristas, fichas técnicas de producto y material de marketing descargable.</p>
+            </div>
+
+            <div class="pilar" data-reveal>
+                <div class="pilar-icono">📍</div>
+                <h4>ZONA EXCLUSIVA</h4>
+                <p>Asignamos y protegemos tu territorio. Ningún otro distribuidor Savage puede operar en tu zona.</p>
+            </div>
+
+            <div class="pilar" data-reveal>
+                <div class="pilar-icono">🤝</div>
+                <h4>EJECUTIVO DEDICADO</h4>
+                <p>Un contacto comercial directo para cotizaciones, soporte de ventas y reposición de stock.</p>
+            </div>
+
+            <div class="pilar" data-reveal>
+                <div class="pilar-icono">📣</div>
+                <h4>APOYO EN PUNTO DE VENTA</h4>
+                <p>Material POP, display de latas y activos visuales para maximizar la visibilidad en tu local.</p>
+            </div>
+
+            <div class="pilar" data-reveal>
+                <div class="pilar-icono">🔄</div>
+                <h4>REPOSICIÓN FLEXIBLE</h4>
+                <p>Pedidos sin contrato de exclusividad forzada. Compras según tu ritmo de venta real.</p>
+            </div>
+
+            <div class="pilar" data-reveal>
+                <div class="pilar-icono">📈</div>
+                <h4>PRODUCTO EN CRECIMIENTO</h4>
+                <p>Entra antes del lanzamiento masivo. Los primeros distribuidores siempre capturan la mayor cuota.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta-wrapper">
+        <div class="cta-linea"></div>
+        <p class="cta-texto">¿Tu negocio califica? Habla con nuestro equipo comercial hoy.</p>
+        <a href="#contacto" class="cta-boton">QUIERO DISTRIBUIR SAVAGE →</a>
+    </div>
+
+</section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                (entry.target as HTMLElement).classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+
+<style>
+    .seccion-distribuidores {
+        width: 100%;
+        background-color: #050505;
+        padding: 120px 20px;
+        border-top: 1px solid #111;
+    }
+
+    /* ── HEADER ── */
+    .header-wrapper {
+        max-width: 1100px;
+        margin: 0 auto 80px;
+        text-align: center;
+    }
+    .badge {
+        display: inline-block;
+        border: 1px solid rgba(250, 204, 21, 0.35);
+        background-color: rgba(250, 204, 21, 0.08);
+        color: #facc15;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem; font-weight: 700;
+        letter-spacing: 4px; text-transform: uppercase;
+        padding: 6px 18px; border-radius: 100px;
+        margin-bottom: 28px;
+        display: inline-block;
+    }
+    .titulo {
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        font-weight: 700; color: #ffffff;
+        letter-spacing: 2px; line-height: 1.05;
+        margin: 0 0 20px 0;
+    }
+    .titulo-dorado { color: #facc15; }
+    .subtitulo {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem; color: #555555;
+        letter-spacing: 0.5px; line-height: 1.7;
+    }
+
+    /* ── MÉTRICAS ── */
+    .metricas-grid {
+        max-width: 1100px;
+        margin: 0 auto 100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .metrica-card {
+        background-color: #0d0d0d;
+        border: 1px solid #1e1e1e;
+        border-radius: 12px;
+        padding: 40px 28px;
+        text-align: center;
+        position: relative;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    .metrica-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease;
+    }
+    .metrica-card:nth-child(1) { transition-delay: 0s; }
+    .metrica-card:nth-child(2) { transition-delay: 0.1s; }
+    .metrica-card:nth-child(3) { transition-delay: 0.2s; }
+    .metrica-card:nth-child(4) { transition-delay: 0.3s; }
+
+    .metrica-card:hover {
+        border-color: #facc15;
+        transform: translateY(-4px);
+    }
+    .metrica-card.destacado {
+        border-color: #facc15;
+        background: linear-gradient(135deg, #0f0f0f 0%, #111108 100%);
+    }
+    .metrica-card.destacado::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #facc15, #eab308);
+        border-radius: 12px 12px 0 0;
+    }
+
+    .metrica-badge-top {
+        position: absolute;
+        top: -1px; right: 20px;
+        background-color: #facc15;
+        color: #000;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.6rem; font-weight: 800;
+        letter-spacing: 2px; text-transform: uppercase;
+        padding: 4px 10px;
+        border-radius: 0 0 6px 6px;
+    }
+
+    .metrica-numero {
+        display: block;
+        font-family: 'Oswald', sans-serif;
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        font-weight: 700; color: #facc15;
+        line-height: 1; margin-bottom: 8px;
+    }
+    .metrica-unidad {
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-left: 4px;
+        color: #a89010;
+    }
+    .metrica-label {
+        display: block;
+        font-family: 'Oswald', sans-serif;
+        font-size: 0.8rem; font-weight: 700;
+        color: #ffffff; letter-spacing: 2px;
+        text-transform: uppercase; margin-bottom: 14px;
+    }
+    .metrica-desc {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.82rem; color: #555555;
+        line-height: 1.6; margin: 0;
+    }
+
+    /* ── PILARES ── */
+    .pilares-wrapper {
+        max-width: 1100px;
+        margin: 0 auto 90px;
+    }
+    .pilares-titulo {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1rem; font-weight: 700;
+        color: #444444; letter-spacing: 4px;
+        text-transform: uppercase;
+        text-align: center; margin-bottom: 48px;
+    }
+    .pilares-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        background-color: #111111;
+        border: 1px solid #111111;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .pilar {
+        background-color: #0a0a0a;
+        padding: 40px 32px;
+        transition: background-color 0.25s ease;
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    .pilar.visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.25s ease;
+    }
+    .pilar:nth-child(1) { transition-delay: 0s; }
+    .pilar:nth-child(2) { transition-delay: 0.07s; }
+    .pilar:nth-child(3) { transition-delay: 0.14s; }
+    .pilar:nth-child(4) { transition-delay: 0.21s; }
+    .pilar:nth-child(5) { transition-delay: 0.28s; }
+    .pilar:nth-child(6) { transition-delay: 0.35s; }
+
+    .pilar:hover { background-color: #0f0f0f; }
+
+    .pilar-icono {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+        display: block;
+    }
+    .pilar h4 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 1rem; font-weight: 700;
+        color: #ffffff; letter-spacing: 2px;
+        text-transform: uppercase; margin: 0 0 12px 0;
+    }
+    .pilar p {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem; color: #555555;
+        line-height: 1.7; margin: 0;
+    }
+
+    /* ── CTA ── */
+    .cta-wrapper {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .cta-linea {
+        width: 60px; height: 1px;
+        background-color: #facc15;
+        margin: 0 auto 32px;
+    }
+    .cta-texto {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem; color: #666666;
+        letter-spacing: 0.5px; margin-bottom: 32px;
+    }
+    .cta-boton {
+        display: inline-block;
+        background-color: #facc15;
+        color: #000000;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.1rem; font-weight: 700;
+        letter-spacing: 2px; text-transform: uppercase;
+        text-decoration: none;
+        padding: 18px 52px;
+        border-radius: 6px;
+        transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-boton:hover {
+        background-color: #eab308;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(250, 204, 21, 0.2);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+        .metricas-grid { grid-template-columns: repeat(2, 1fr); }
+        .pilares-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+        .seccion-distribuidores { padding: 80px 16px; }
+        .metricas-grid { grid-template-columns: 1fr; }
+        .pilares-grid { grid-template-columns: 1fr; }
+    }
+</style>
