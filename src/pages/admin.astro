@@ -1455,11 +1455,12 @@
 
 	.filter-select {
 		padding: 9px 14px;
-		background: rgba(255, 255, 255, 0.04);
+		background-color: #121214 !important;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		border-radius: 8px; color: #d4d4d8;
 		font-size: 0.85rem; font-family: 'Inter', sans-serif;
 		cursor: pointer;
+		color-scheme: dark !important;
 	}
 	.filter-select:focus { outline: none; border-color: rgba(250, 204, 21, 0.4); }
 
@@ -1551,10 +1552,14 @@
 	/* Fix Autocomplete Background is handled globally above */
 
 	.form-group textarea { resize: vertical; min-height: 80px; }
-	.form-group select { cursor: pointer; }
+	.form-group select {
+		cursor: pointer;
+		background-color: #121214 !important;
+		color-scheme: dark !important;
+	}
 	select option {
-		background-color: #121214;
-		color: #fff;
+		background-color: #121214 !important;
+		color: #ffffff !important;
 	}
 
 	.file-drop-zone {
