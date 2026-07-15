@@ -614,6 +614,7 @@
 		renderTable();
 		renderChart();
 		renderRecentList();
+		renderClientCards();
 	}
 
 	function animateValue(el: HTMLElement, target: number) {
@@ -926,18 +927,19 @@
 
 	// Populate client dropdown in transaction form
 	function populateClientSelect() {
-		const opts = clientes.map(c => `<option value="${c.id}">${c.nombre}${c.ciudad ? ' — ' + c.ciudad : ''}</option>`).join('');
+		const opts = clientes.map(c => `<option value="${c.id}">${c.nombre || 'Sin Nombre'}${c.ciudad ? ' — ' + c.ciudad : ''}</option>`).join('');
 		txClienteSelect.innerHTML = `<option value="">— Seleccionar cliente —</option>` + opts;
 	}
 
 	// Render client cards
 	function renderClientCards() {
 		const search = clientSearch.value.toLowerCase();
-		const filtered = clientes.filter(c =>
-			c.nombre.toLowerCase().includes(search) ||
-			(c.ciudad && c.ciudad.toLowerCase().includes(search)) ||
-			(c.rut && c.rut.toLowerCase().includes(search))
-		);
+		const filtered = clientes.filter(c => {
+			const nombre = c.nombre ? String(c.nombre).toLowerCase() : '';
+			const ciudad = c.ciudad ? String(c.ciudad).toLowerCase() : '';
+			const rut = c.rut ? String(c.rut).toLowerCase() : '';
+			return nombre.includes(search) || ciudad.includes(search) || rut.includes(search);
+		});
 
 		if (filtered.length === 0) {
 			clientsGrid.innerHTML = `<div class="empty-state">No se encontraron clientes.</div>`;
@@ -959,7 +961,7 @@
 							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
 						</div>
 						<div class="client-card-info">
-							<span class="client-card-name">${c.nombre}</span>
+							<span class="client-card-name">${c.nombre || 'Sin Nombre'}</span>
 							<span class="client-card-meta">${tipoLabel}${c.ciudad ? ' · ' + c.ciudad : ''}</span>
 						</div>
 					</div>
